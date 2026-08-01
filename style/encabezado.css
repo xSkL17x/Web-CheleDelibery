@@ -1,0 +1,456 @@
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#070d1c;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* ===========================
+   VARIABLES
+=========================== */
+
+:root{
+
+    --color-fondo:#080d1b;
+    --color-fondo2:#0f1527;
+
+    --color-principal:#ffd034;
+    --color-secundario:#ff4f72;
+
+    --color-texto:#ffffff;
+    --color-texto2:#9ea6bc;
+
+    --color-hover:#ffe066;
+
+    --radio:50px;
+
+    --transicion:.30s;
+
+    --ancho:1400px;
+
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.encabezado{
+
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:90px;
+
+    background:rgba(8,13,27,.96);
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 45px;
+
+    border-bottom:1px solid rgba(255,255,255,.06);
+
+    z-index:999;
+
+    backdrop-filter:blur(10px);
+
+}
+
+/* ===========================
+   LOGO
+=========================== */
+
+.logo{
+
+    display:flex;
+    align-items:center;
+
+}
+
+.logo img{
+
+    width:120px;
+    transition:var(--transicion);
+
+}
+
+.logo img:hover{
+
+    transform:scale(1.05);
+
+}
+
+/* ===========================
+   MENU
+=========================== */
+
+.menu{
+
+    flex:1;
+    display:flex;
+    justify-content:center;
+
+}
+
+.menu ul{
+
+    display:flex;
+    list-style:none;
+    gap:35px;
+
+}
+
+.menu ul li a{
+
+    text-decoration:none;
+
+    color:var(--color-texto2);
+
+    text-transform:uppercase;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+    transition:var(--transicion);
+
+    position:relative;
+
+}
+
+.menu ul li a:hover{
+
+    color:var(--color-texto);
+
+}
+
+.menu ul li a.activo{
+
+    color:#fff;
+
+}
+
+.menu ul li a.activo::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:-12px;
+
+    width:100%;
+    height:3px;
+
+    background:var(--color-principal);
+
+    border-radius:10px;
+
+}
+
+/* ===========================
+   BOTONES DERECHA
+=========================== */
+
+.acciones{
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+}
+
+.user-area {
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn-login{
+
+    background:var(--color-principal);
+
+    color:#3b2a00;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    font-size:14px;
+
+    padding:12px 22px;
+
+    border-radius:40px;
+
+    transition:var(--transicion);
+
+}
+
+.btn-login:hover{
+
+    background:var(--color-hover);
+    transform:translateY(-5px);
+
+}
+
+.btn-pedir{
+
+    background:linear-gradient(90deg,#ff6a5d,#ff4f82);
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    font-size:13px;
+
+    padding:13px 24px;
+
+    border-radius:40px;
+
+    transition:var(--transicion);
+
+}
+
+.btn-pedir:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 12px 30px rgba(255,70,100,.35);
+
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:140px 60px 60px;
+
+    background:
+    linear-gradient(rgba(7,10,22,.80),rgba(7,10,22,.90)),
+    url("../assets/fondo.jpg") center center/cover no-repeat;
+
+}
+
+.hero-contenido{
+
+    width:100%;
+    max-width:700px;
+
+}
+
+.hero h1{
+
+    font-size:58px;
+
+    line-height:1.1;
+
+    margin-bottom:20px;
+
+}
+
+.hero p{
+
+    color:var(--color-texto2);
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+
+}
+
+.hero-botones{
+
+    display:flex;
+    gap:20px;
+
+}
+
+.btn-principal{
+
+    background:var(--color-principal);
+
+    color:#1d1d1d;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    padding:15px 30px;
+
+    border-radius:40px;
+
+    transition:var(--transicion);
+
+}
+
+.btn-principal:hover{
+
+    background:var(--color-hover);
+
+}
+
+.btn-secundario{
+
+    border:2px solid rgba(255,255,255,.20);
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    padding:15px 30px;
+
+    border-radius:40px;
+
+    transition:var(--transicion);
+
+}
+
+.btn-secundario:hover{
+
+    background:#ffffff15;
+
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+
+    background:#050914;
+
+    text-align:center;
+
+    padding:30px;
+
+    color:var(--color-texto2);
+
+    border-top:1px solid rgba(255,255,255,.06);
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:1000px){
+
+    .encabezado{
+
+        flex-direction:column;
+        height:auto;
+        padding:20px;
+
+    }
+
+    .menu{
+
+        margin:20px 0;
+
+    }
+
+    .menu ul{
+
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:20px;
+
+    }
+
+    .acciones{
+
+        width:100%;
+        justify-content:center;
+
+    }
+
+    .hero{
+
+        text-align:center;
+
+    }
+
+    .hero-botones{
+
+        justify-content:center;
+        flex-wrap:wrap;
+
+    }
+
+    .hero h1{
+
+        font-size:42px;
+
+    }
+
+}
+
+/* Esta clase ocultará cualquier elemento que la tenga */
+.hidden {
+    display: none !important;
+}
+
+@media(max-width:600px){
+
+    .logo img{
+
+        width:90px;
+
+    }
+
+    .hero h1{
+
+        font-size:34px;
+
+    }
+
+    .hero p{
+
+        font-size:16px;
+
+    }
+
+    .btn-login,
+    .btn-pedir{
+
+        width:100%;
+        text-align:center;
+
+    }
+
+    .acciones{
+
+        flex-direction:column;
+
+    }
+
+}
