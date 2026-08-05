@@ -27,6 +27,8 @@ body{
     --color-principal:#ffd034;
     --color-secundario:#ff4f72;
 
+    
+    --color-Oro:#ffe066;
     --color-texto:#ffffff;
     --color-texto2:#9ea6bc;
 
@@ -265,11 +267,15 @@ body{
 
 .hero h1{
 
+    
+    color:var(--color-Oro);
+
     font-size:58px;
 
     line-height:1.1;
 
     margin-bottom:20px;
+    
 
 }
 
