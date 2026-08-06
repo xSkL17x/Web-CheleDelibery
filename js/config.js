@@ -1,34 +1,35 @@
-// js/config.js
-const fs = require('fs');
-const path = './assets/config.json';
+const supabase = require('./supabase');
 
-const datosIniciales = {
-  slogan: "Tu tiempo vale oro",
-  descripcion: "Enviamos comida, paquetes, documentos y mucho más de forma rápida, segura y al mejor precio.",
-  numero: "+50586947233"
-};
+let configCache = null;
 
-function cargarConfig() {
-  if (!fs.existsSync(path)) {
-    fs.writeFileSync(path, JSON.stringify(datosIniciales, null, 2));
-    console.log('✅ config.json creado.');
-    return datosIniciales;
-  }
+async function cargarConfig() {
 
-  try {
-    const datos = JSON.parse(fs.readFileSync(path, 'utf8'));
-    if (!datos.slogan || !datos.descripcion || !datos.numero) {
-      console.log('⚠️ Configuración incompleta. Regenerando...');
-      fs.writeFileSync(path, JSON.stringify(datosIniciales, null, 2));
-      return datosIniciales;
-    }
-    console.log('✅ Configuración cargada.');
-    return datos;
-  } catch (error) {
-    console.log('⚠️ JSON inválido. Creando nuevo config.');
-    fs.writeFileSync(path, JSON.stringify(datosIniciales, null, 2));
-    return datosIniciales;
-  }
+    if (configCache) {console.log("⚡ Configuración desde caché.");return configCache;}
+
+    console.log("📥 Cargando configuración desde Supabase...");
+
+    const { data, error } = await supabase.from('web_config').select('*');
+
+    if (error) {console.error(error);return null;}
+
+    const config = {};
+
+    data.forEach(item => {config[item.id] = item.valor;});
+
+    configCache = {
+        slogan: config.slogan,
+        descripcion: config.descripcion_slogan,
+        numero: config.numero
+    };
+
+    console.log("✅ Configuración guardada en caché.");
+
+    return configCache;
 }
 
-module.exports = { cargarConfig };
+function actualizarCache(nuevaConfig) {configCache = nuevaConfig;}
+
+module.exports = {
+    cargarConfig,
+    actualizarCache
+};

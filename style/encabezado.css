@@ -1,462 +1,501 @@
-/* ===========================
-   RESET
-=========================== */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Segoe UI',sans-serif;
+/* ========================================================
+   VARIABLES GLOBALES Y RESETEO
+   ======================================================== */
+:root {
+    --bg-principal: #0b0d12;
+    --bg-tarjeta: #151821;
+    --bg-tarjeta-transparente: rgba(21, 24, 33, 0.7);
+    --color-primario: #facc15; /* Amarillo */
+    --color-primario-hover: #eab308;
+    --color-secundario: #f43f5e; /* Rojo/Rosado */
+    --color-secundario-hover: #e11d48;
+    --texto-blanco: #ffffff;
+    --texto-gris: #a1a1aa;
+    --borde-sutil: rgba(255, 255, 255, 0.1);
+    --fuente-principal: 'Inter', 'Segoe UI', system-ui, sans-serif;
 }
 
-body{
-    background:#070d1c;
-    color:#fff;
-    overflow-x:hidden;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* ===========================
-   VARIABLES
-=========================== */
-
-:root{
-
-    --color-fondo:#080d1b;
-    --color-fondo2:#0f1527;
-
-    --color-principal:#ffd034;
-    --color-secundario:#ff4f72;
-
-    
-    --color-Oro:#ffe066;
-    --color-texto:#ffffff;
-    --color-texto2:#9ea6bc;
-
-    --color-hover:#ffe066;
-
-    --radio:50px;
-
-    --transicion:.30s;
-
-    --ancho:1400px;
-
+body {
+    background-color: var(--bg-principal);
+    color: var(--texto-blanco);
+    font-family: var(--fuente-principal);
+    line-height: 1.5;
+    overflow-x: hidden;
 }
 
-/* ===========================
-   HEADER
-=========================== */
-
-.encabezado{
-
-    position:fixed;
-    top:0;
-    left:0;
-
-    width:100%;
-    height:90px;
-
-    background:rgba(8,13,27,.96);
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:0 45px;
-
-    border-bottom:1px solid rgba(255,255,255,.06);
-
-    z-index:999;
-
-    backdrop-filter:blur(10px);
-
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-/* ===========================
-   LOGO
-=========================== */
-
-.logo{
-
-    display:flex;
-    align-items:center;
-
+img {
+    max-width: 100%;
+    display: block;
 }
 
-.logo img{
-
-    width:120px;
-    transition:var(--transicion);
-
-}
-
-.logo img:hover{
-
-    transform:scale(1.05);
-
-}
-
-/* ===========================
-   MENU
-=========================== */
-
-.menu{
-
-    flex:1;
-    display:flex;
-    justify-content:center;
-
-}
-
-.menu ul{
-
-    display:flex;
-    list-style:none;
-    gap:35px;
-
-}
-
-.menu ul li a{
-
-    text-decoration:none;
-
-    color:var(--color-texto2);
-
-    text-transform:uppercase;
-
-    font-size:13px;
-
-    font-weight:700;
-
-    letter-spacing:.5px;
-
-    transition:var(--transicion);
-
-    position:relative;
-
-}
-
-.menu ul li a:hover{
-
-    color:var(--color-texto);
-
-}
-
-.menu ul li a.activo{
-
-    color:#fff;
-
-}
-
-.menu ul li a.activo::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:0;
-    bottom:-12px;
-
-    width:100%;
-    height:3px;
-
-    background:var(--color-principal);
-
-    border-radius:10px;
-
-}
-
-/* ===========================
-   BOTONES DERECHA
-=========================== */
-
-.acciones{
-    display:flex;
-    align-items:center;
-    gap:15px;
-
-}
-
-.user-area {
-    display: inline-flex;
+/* ========================================================
+   BARRA SUPERIOR (HEADER)
+   ======================================================== */
+.encabezado {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+    padding: 1.5rem 5%;
+    background-color: var(--bg-principal);
+    border-bottom: 1px solid var(--borde-sutil);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-.btn-login{
-
-    background:var(--color-principal);
-
-    color:#3b2a00;
-
-    text-decoration:none;
-
-    font-weight:700;
-
-    font-size:14px;
-
-    padding:12px 22px;
-
-    border-radius:40px;
-
-    transition:var(--transicion);
-
+.logo img {
+    height: 45px;
 }
 
-.btn-login:hover{
-
-    background:var(--color-hover);
-    transform:translateY(-5px);
-
+.menu ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
 }
 
-.btn-pedir{
-
-    background:linear-gradient(90deg,#ff6a5d,#ff4f82);
-
-    color:#fff;
-
-    text-decoration:none;
-
-    font-weight:700;
-
-    text-transform:uppercase;
-
-    font-size:13px;
-
-    padding:13px 24px;
-
-    border-radius:40px;
-
-    transition:var(--transicion);
-
+.menu a {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--texto-gris);
+    letter-spacing: 1px;
+    padding-bottom: 0.5rem;
+    transition: color 0.3s;
 }
 
-.btn-pedir:hover{
-
-    transform:translateY(-4px);
-
-    box-shadow:0 12px 30px rgba(255,70,100,.35);
-
+.menu a:hover,
+.menu a.activo {
+    color: var(--texto-blanco);
 }
 
-/* ===========================
-   HERO
-=========================== */
-
-.hero{
-
-    min-height:100vh;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    padding:140px 60px 60px;
-
-    background:
-    linear-gradient(rgba(7,10,22,.80),rgba(7,10,22,.90)),
-    url("../assets/fondo.jpg") center center/cover no-repeat;
-
+.menu a.activo {
+    border-bottom: 2px solid var(--color-primario);
 }
 
-.hero-contenido{
-
-    width:100%;
-    max-width:700px;
-
+.acciones {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
-.hero h1{
+.btn-login,
+.btn-pedir {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
 
+.btn-login {
+    background-color: var(--color-primario);
+    color: #000;
+}
+
+.btn-login:hover { background-color: var(--color-primario-hover); }
+
+.btn-pedir {
+    background-color: var(--color-secundario);
+    color: var(--texto-blanco);
+}
+
+.btn-pedir:hover { background-color: var(--color-secundario-hover); }
+
+.icono {
+    width: 18px;
+    height: 18px;
+}
+
+/* ========================================================
+   SECCIÓN PORTADA (HERO)
+   ======================================================== */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5rem 5%;
+    position: relative;
+    /* Recomendación: Añade la imagen de fondo desde el HTML o aquí con la ruta correcta */
+    background: linear-gradient(to right, #0b0d12 45%, transparent), 
+                url('../assets/fondo-moto.png') no-repeat right center / cover;
+    min-height: 70vh;
+}
+
+.hero-contenido {
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.hero-etiqueta span {
+    background-color: rgba(250, 204, 21, 0.1);
+    color: var(--color-primario);
+    border: 1px solid var(--color-primario);
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+#slogan {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    /* Nota: Para que "vale oro" sea amarillo como en la imagen, 
+       deberías envolver esas palabras en un <span> en tu HTML */
+}
+
+#descripcion {
+    font-size: 1.1rem;
+    color: var(--texto-gris);
+    max-width: 90%;
+}
+
+.hero-botones {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.btn-principal {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--color-primario);
+    color: #000;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.btn-principal:hover { background-color: var(--color-primario-hover); }
+
+.btn-secundario {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: transparent;
+    color: var(--texto-blanco);
+    border: 1px solid var(--texto-blanco);
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-secundario:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Panel Derecho (Características) */
+.hero-caracteristicas {
+    background-color: var(--bg-tarjeta-transparente);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--borde-sutil);
+    padding: 2rem;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    min-width: 300px;
+}
+
+.item-caracteristica {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.icono-caracteristica {
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    background-color: rgba(250, 204, 21, 0.1);
+    border-radius: 50%;
+}
+
+.texto-caracteristica {
+    display: flex;
+    flex-direction: column;
+}
+
+.texto-caracteristica strong {
+    font-size: 0.95rem;
+}
+
+.texto-caracteristica span {
+    font-size: 0.8rem;
+    color: var(--texto-gris);
+}
+
+/* ========================================================
+   NEGOCIOS RECOMENDADOS
+   ======================================================== */
+.seccion-negocios {
+    padding: 3rem 5%;
+}
+
+.cabecera-negocios {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.cabecera-negocios h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.8rem;
+}
+
+.icono-titulo {
+    width: 24px;
+}
+
+.btn-ver-mas {
+    font-size: 0.9rem;
+    color: var(--texto-gris);
+    transition: color 0.3s;
+}
+
+.btn-ver-mas:hover {
+    color: var(--texto-blanco);
+}
+
+.grid-negocios {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Estilos de las tarjetas (Para cuando JS las genere) */
+.tarjeta-negocio {
+    background-color: var(--bg-tarjeta);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid var(--borde-sutil);
+    transition: transform 0.3s;
+}
+
+.tarjeta-negocio:hover {
+    transform: translateY(-5px);
+}
+
+.imagen-contenedor {
+    position: relative;
+    height: 140px;
+}
+
+.img-negocio {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.etiqueta-categoria {
+    position: absolute;
+    bottom: -10px;
+    left: 15px;
+    background-color: #6d28d9; /* Ejemplo púrpura, cambiar dinámicamente en JS */
+    color: white;
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 0.2rem 0.6rem;
+    border-radius: 5px;
+}
+
+.info-negocio {
+    padding: 1.5rem 1rem 1rem;
+}
+
+.info-negocio h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+
+.info-negocio p {
+    font-size: 0.85rem;
+    color: var(--texto-gris);
+    margin-bottom: 1rem;
+}
+
+.enlace-ver-mas {
+    display: block;
+    text-align: right;
+    color: var(--color-primario);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* ========================================================
+   BARRA DE ESTADÍSTICAS
+   ======================================================== */
+.barra-estadisticas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-tarjeta);
+    border: 1px solid var(--borde-sutil);
+    border-radius: 20px;
+    margin: 2rem 5% 4rem;
+    padding: 2rem 3rem;
+}
+
+.item-estadistica {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.icono-grande {
+    width: 50px;
+    height: 50px;
+}
+
+.texto-estadistica {
+    display: flex;
+    flex-direction: column;
+}
+
+.texto-estadistica strong {
+    font-size: 1.1rem;
+}
+
+.texto-estadistica span {
+    font-size: 0.85rem;
+    color: var(--texto-gris);
+}
+
+.separador-estadistica {
+    width: 1px;
+    height: 50px;
+    background-color: var(--borde-sutil);
+}
+
+/* ========================================================
+   PIE DE PÁGINA (FOOTER)
+   ======================================================== */
+footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid var(--borde-sutil);
+    color: var(--texto-gris);
+    font-size: 0.9rem;
+}
+
+/* ========================================================
+   RESPONSIVE DESIGN (Tablets y Móviles)
+   ======================================================== */
+@media (max-width: 1024px) {
+    .hero {
+        flex-direction: column;
+        padding-top: 3rem;
+    }
+    .hero-contenido {
+        max-width: 100%;
+        text-align: center;
+        align-items: center;
+        margin-bottom: 3rem;
+    }
+    .hero-botones {
+        justify-content: center;
+    }
+    .barra-estadisticas {
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
+    }
+    .separador-estadistica {
+        display: none;
+    }
+}
+
+/* ========================================================
+   AJUSTES ESPECÍFICOS PARA CELULARES (Fix para la imagen)
+   ======================================================== */
+@media (max-width: 768px) {
+    /* 1. Reparación de la Barra Superior (Encabezado) */
+    .encabezado {
+        flex-wrap: wrap; /* Permite que los elementos bajen de línea */
+        justify-content: center;
+        gap: 1rem;
+        padding: 1.5rem 1rem;
+    }
     
-    color:var(--color-Oro);
-
-    font-size:58px;
-
-    line-height:1.1;
-
-    margin-bottom:20px;
+    .logo {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
     
-
-}
-
-.hero p{
-
-    color:var(--color-texto2);
-
-    font-size:18px;
-
-    line-height:1.8;
-
-    margin-bottom:35px;
-
-}
-
-.hero-botones{
-
-    display:flex;
-    gap:20px;
-
-}
-
-.btn-principal{
-
-    background:var(--color-principal);
-
-    color:#1d1d1d;
-
-    text-decoration:none;
-
-    font-weight:700;
-
-    padding:15px 30px;
-
-    border-radius:40px;
-
-    transition:var(--transicion);
-
-}
-
-.btn-principal:hover{
-
-    background:var(--color-hover);
-
-}
-
-.btn-secundario{
-
-    border:2px solid rgba(255,255,255,.20);
-
-    color:#fff;
-
-    text-decoration:none;
-
-    font-weight:700;
-
-    padding:15px 30px;
-
-    border-radius:40px;
-
-    transition:var(--transicion);
-
-}
-
-.btn-secundario:hover{
-
-    background:#ffffff15;
-
-}
-
-/* ===========================
-   FOOTER
-=========================== */
-
-footer{
-
-    background:#050914;
-
-    text-align:center;
-
-    padding:30px;
-
-    color:var(--color-texto2);
-
-    border-top:1px solid rgba(255,255,255,.06);
-
-}
-
-/* ===========================
-   RESPONSIVE
-=========================== */
-
-@media(max-width:1000px){
-
-    .encabezado{
-
-        flex-direction:column;
-        height:auto;
-        padding:20px;
-
+    .acciones {
+        order: 2; /* Sube las acciones arriba del menú */
+        width: 100%;
+        justify-content: center;
     }
 
-    .menu{
-
-        margin:20px 0;
-
+    .btn-login {
+        white-space: nowrap; /* Evita que el texto se rompa y deforme el botón */
+        width: 100%; /* Botón ancho para móvil */
+        justify-content: center;
     }
 
-    .menu ul{
-
-        flex-wrap:wrap;
-        justify-content:center;
-        gap:20px;
-
+    .btn-pedir {
+        display: none; /* Ocultamos el del header porque ya está en la portada */
+    }
+    
+    .menu {
+        order: 3; /* Pasa los enlaces a la parte inferior del encabezado */
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+    
+    .menu ul {
+        justify-content: center;
+        flex-wrap: wrap; /* Si los enlaces no caben, bajan de línea */
+        gap: 1rem 1.5rem;
+    }
+    
+    .menu a {
+        font-size: 0.8rem; /* Letra un poco más pequeña en celular */
     }
 
-    .acciones{
-
-        width:100%;
-        justify-content:center;
-
+    /* 2. Reparación de la Portada (Hero) */
+    #slogan {
+        font-size: 2.5rem; /* Ajusta el título para que no sea tan masivo */
     }
 
-    .hero{
-
-        text-align:center;
-
+    .hero-botones {
+        flex-direction: column; /* Apila los botones de la portada verticalmente */
+        width: 100%;
+        gap: 1rem;
     }
 
-    .hero-botones{
-
-        justify-content:center;
-        flex-wrap:wrap;
-
+    .btn-principal, .btn-secundario {
+        width: 100%;
+        justify-content: center; /* Centra el icono y el texto */
+        white-space: nowrap;
     }
-
-    .hero h1{
-
-        font-size:42px;
-
+    
+    .hero-caracteristicas {
+        min-width: 100%; /* La tarjeta lateral toma todo el ancho */
+        padding: 1.5rem;
     }
-
-}
-
-/* Esta clase ocultará cualquier elemento que la tenga */
-.hidden {
-    display: none !important;
-}
-
-@media(max-width:600px){
-
-    .logo img{
-
-        width:90px;
-
-    }
-
-    .hero h1{
-
-        font-size:34px;
-
-    }
-
-    .hero p{
-
-        font-size:16px;
-
-    }
-
-    .btn-login,
-    .btn-pedir{
-
-        width:100%;
-        text-align:center;
-
-    }
-
-    .acciones{
-
-        flex-direction:column;
-
-    }
-
 }

@@ -1,80 +1,119 @@
-<!DOCTYPE html> <html lang="es">
+<!DOCTYPE html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- PyScript -->
     <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
     <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
-    
     <!-- Estilo y Inicio -->
     <title>Inicio | Chele Delivery</title>
     <link rel="stylesheet" href="style/encabezado.css">
 </head>
-
 <body>
-
-    <!-- ☁☁☁☁☁☁☁☁☁☁☁☁ Barra Superior ☁☁☁☁☁☁☁☁☁☁☁☁☁☁☁☁ -->
+    <!-- ☁☁☁ Barra Superior ☁☁☁ -->
     <header class="encabezado">
-        <div class="logo"> <a href="pa.html"> <img src="assets/logo.png" alt="Chele Delivery"> </a> </div>
+        <div class="logo"><a href="pa.html"><img src="assets/logo.png" alt="Chele Delivery"></a></div>
         <nav class="menu">
             <ul>
-                <li><a href="#" class="activo">Inicio</a></li>
-                <li><a href="sv.html">Servicios</a></li>
-                <!-- <li><a href="#">Cómo Funciona</a></li> -->
-                <!-- <li><a href="#">Rastrear</a></li> -->
-                <!-- <li><a href="#">Rewards</a></li> -->
-                <li><a href="ns.html">Nosotros</a></li>
+                <li><a href="#" class="activo">INICIO</a></li>
+                <li><a href="sv.html">SERVICIOS</a></li>
+                <li><a href="ns.html">NOSOTROS</a></li>
             </ul>
         </nav>
         <div class="acciones">
-            <!-- Mantenemos la estructura profesional que me pediste -->
             <div class="user-area">
                 <!-- Estado 1: Cerrado -->
-                <a href="is.html" id="btn-login" class="btn-login">Iniciar Sesión</a>
-
+                <a href="is.html" id="btn-login" class="btn-login">Iniciar Sesión <img src="assets/icono-usuario.svg" alt="Usuario" class="icono"></a>
                 <!-- Estado 2: Logueado -->
                 <div id="user-profile" class="user-profile hidden" style="display: none;">
-                    <img src="assets/default-avatar.png" id="user-avatar" alt="Avatar">
-                    <span id="user-name">Cliente</span>
+                    <span id="user-name">Cliente</span> <img src="assets/default-avatar.png" id="user-avatar" alt="Avatar">
                 </div>
             </div>
-
-            <a href="pa.html" class="btn-pedir"> Pedir Ahora → </a>
+            <a href="pa.html" class="btn-pedir">SOLICITAR DELIVERY </a>
         </div>
     </header>
-    <!-- ☁☁☁☁☁☁☁☁☁☁☁☁ Fin Barra Superior ☁☁☁☁☁☁☁☁☁☁☁☁☁☁☁☁ -->
+    <!-- ☁☁☁ Fin Barra Superior ☁☁☁ -->
 
-
-
-    
-
-    <!-- Portada -->
     <main>
-
+        <!-- Portada Principal -->
         <section class="hero">
-
             <div class="hero-contenido">
-
-                <h1 id="slogan">Tu Delivery de Confianza</h1> <!--Slogan-->
-
-                <p id="descripcion"> <!--Descripcion-->
-                    Enviamos comida, paquetes, documentos y mucho más
-                    de forma rápida, segura y al mejor precio.
-                </p>
-
+                <div class="hero-etiqueta"><span>RÁPIDO • SEGURO • CONFIABLE</span></div>
+                <h1 id="slogan">Tu tiempo vale oro</h1>
+                <p id="descripcion">Enviamos comida, paquetes, documentos y mucho más. De forma rápida, segura y al mejor precio.</p>
                 <div class="hero-botones">
-                    <a href="pa.html" class="btn-principal">Solicitar Delivery</a>
-                    <a href="ns.html" class="btn-secundario">Conocer Más</a>
+                    <a href="#" id="btn-whatsapp" class="btn-principal"><img src="assets/icono-moto.svg" alt="" class="icono"> PEDIR POR WHATSAPP</a> 
+                    <a href="ns.html" class="btn-secundario">CONOCER MÁS</a>
                 </div>
-
             </div>
-
+            <!-- Panel flotante lateral derecho -->
+            <aside class="hero-caracteristicas">
+                <div class="item-caracteristica">
+                    <img src="assets/icono-paquete-rapido.svg" alt="" class="icono-caracteristica">
+                    <div class="texto-caracteristica"><strong>Entregas rápidas</strong><span>En minutos</span></div>
+                </div>
+                <div class="item-caracteristica">
+                    <img src="assets/icono-escudo.svg" alt="" class="icono-caracteristica">
+                    <div class="texto-caracteristica"><strong>Seguro y confiable</strong><span>Tu pedido en buenas manos</span></div>
+                </div>
+                <div class="item-caracteristica">
+                    <img src="assets/icono-reloj.svg" alt="" class="icono-caracteristica">
+                    <div class="texto-caracteristica"><strong>Soporte 24/7</strong><span>Estamos para ayudarte</span></div>
+                </div>
+                <div class="item-caracteristica">
+                    <img src="assets/icono-ubicacion.svg" alt="" class="icono-caracteristica">
+                    <div class="texto-caracteristica"><strong>Cobertura local</strong><span>Matagalpa y alrededores</span></div>
+                </div>
+            </aside>
         </section>
 
+        <!-- Sección: Negocios Recomendados -->
+        <section class="seccion-negocios">
+            <div class="cabecera-negocios">
+                <h2>Negocios recomendados <img src="assets/icono-estrella-brillo.svg" alt="Destacado" class="icono-titulo"></h2>
+                <a href="negocios.html" class="btn-ver-mas">Ver todos los negocios →</a>
+            </div>
+            <!-- Contenedor vacío donde JS cargará los negocios -->
+            <div id="contenedor-negocios" class="grid-negocios">
+                <!-- ESTRUCTURA GUÍA PARA JS:
+                <article class="tarjeta-negocio">
+                    <div class="imagen-contenedor"><img src="URL_IMAGEN" alt="Nombre" class="img-negocio"><span class="etiqueta-categoria">Panadería</span></div>
+                    <div class="info-negocio"><h3>Panadería Faby</h3><p>El mejor pan de la ciudad</p><a href="#" class="enlace-ver-mas">Ver más →</a></div>
+                </article> -->
+            </div>
+        </section>
+
+        <!-- Barra inferior de Estadísticas/Beneficios -->
+        <section class="barra-estadisticas">
+            <div class="item-estadistica">
+                <img src="assets/icono-paquete-rapido.svg" alt="Entregas" class="icono-grande">
+                <div class="texto-estadistica"><strong>Entregas en minutos</strong><span>Rápido y sin complicaciones</span></div>
+            </div>
+            <div class="separador-estadistica"></div>
+            <div class="item-estadistica">
+                <img src="assets/icono-escudo.svg" alt="Seguro" class="icono-grande">
+                <div class="texto-estadistica"><strong>Tu pedido seguro</strong><span>Cuidamos cada entrega</span></div>
+            </div>
+            <div class="separador-estadistica"></div>
+            <div class="item-estadistica">
+                <img src="assets/icono-bolsa.svg" alt="Pedidos" class="icono-grande">
+                <div class="texto-estadistica"><strong>+4,500</strong><span>Pedidos entregados</span></div>
+            </div>
+            <div class="separador-estadistica"></div>
+            <div class="item-estadistica">
+                <img src="assets/icono-ubicacion.svg" alt="Cobertura" class="icono-grande">
+                <div class="texto-estadistica"><strong>Cobertura local</strong><span>Matagalpa y alrededores</span></div>
+            </div>
+            <div class="separador-estadistica"></div>
+            <div class="item-estadistica">
+                <img src="assets/icono-cara-feliz.svg" alt="Satisfacción" class="icono-grande">
+                <div class="texto-estadistica"><strong>98%</strong><span>Clientes satisfechos</span></div>
+            </div>
+        </section>
     </main>
 
-    <footer>  <p> © 2026 Chele Delivery by Cyber Bam· Todos los Derechos Reservados. </p> </footer>
+    <footer><p>© 2026 Chele Delivery by Cyber Bam · Todos los Derechos Reservados.</p></footer>
     <script type="module" src="./js/idx.js"></script>
 </body>
-
 </html>
