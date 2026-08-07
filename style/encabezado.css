@@ -172,11 +172,11 @@ img {
     margin-top: 1rem;
 }
 
-.btn-principal {
+.btn-whatsapp {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    background-color: var(--color-primario);
+    background-color: #25D366;
     color: #000;
     padding: 0.8rem 1.5rem;
     border-radius: 50px;
@@ -184,7 +184,7 @@ img {
     transition: 0.3s;
 }
 
-.btn-principal:hover { background-color: var(--color-primario-hover); }
+.btn-whatsapp:hover { background-color: var(--color-primario-hover); }
 
 .btn-secundario {
     display: flex;
@@ -488,7 +488,7 @@ footer {
         gap: 1rem;
     }
 
-    .btn-principal, .btn-secundario {
+    .btn-whatsapp, .btn-secundario {
         width: 100%;
         justify-content: center; /* Centra el icono y el texto */
         white-space: nowrap;

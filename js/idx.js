@@ -9,7 +9,7 @@ class PaginaInicio {
 
   async cargarconfigs() {
     console.log("🚀 Cargando configuración...");
-
+    
     const respuesta = await fetch('/config');
     this.config = await respuesta.json();
 
@@ -23,7 +23,7 @@ class PaginaInicio {
     if (descripcion) descripcion.innerHTML = this.config.descripcion;
     if (numero) numero.innerHTML = this.config.numero;
 
-    // --- Configuración dinámica del botón de WhatsApp ---
+    // --- Configuración WhatsApp ---
     const btnWhatsapp = document.getElementById('btn-whatsapp');
     if (btnWhatsapp && this.config.numero) {
       // Limpia el número por si trae espacios o símbolos y arma el enlace
