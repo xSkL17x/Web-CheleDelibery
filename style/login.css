@@ -1,0 +1,403 @@
+/* -̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳==
+   VARIABLES GLOBALES Y RESETEO
+   -̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳== */
+:root {
+    --bg-principal: #0b0d12;
+    --bg-tarjeta: #151821;
+    --color-primario: #facc15;
+    --color-primario-hover: #eab308;
+    --color-secundario: #f43f5e;
+    --color-secundario-hover: #e11d48;
+    --texto-blanco: #ffffff;
+    --texto-gris: #a1a1aa;
+    --borde-sutil: rgba(255, 255, 255, 0.1);
+    --fuente-principal: 'Inter', system-ui, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-principal);
+    color: var(--texto-blanco);
+    font-family: var(--fuente-principal);
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* -̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳==
+   ENCABEZADO
+   -̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳== */
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background-color: var(--bg-principal);
+    border-bottom: 1px solid var(--borde-sutil);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo img {
+    height: 65px; /* 45 base*/
+}
+
+.menu ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.menu a {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--texto-gris);
+    letter-spacing: 1px;
+    padding-bottom: 0.5rem;
+    transition: color 0.3s;
+}
+
+.menu a:hover,
+.menu a.activo {
+    color: var(--texto-blanco);
+}
+
+.menu a.activo {
+    border-bottom: 2px solid var(--color-primario);
+}
+
+.acciones {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.btn-login,
+.btn-pedir {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-login {
+    background-color: var(--color-primario);
+    color: #000;
+}
+
+.btn-login:hover { background-color: var(--color-primario-hover); }
+
+.btn-pedir {
+    background-color: var(--color-secundario);
+    color: var(--texto-blanco);
+}
+
+.btn-pedir:hover { background-color: var(--color-secundario-hover); }
+
+.icono {
+    width: 18px;
+    height: 18px;
+}
+
+/* -̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳==
+   CONTENEDOR PRINCIPAL LOGIN (ESCRITORIO)
+   -̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳== */
+.seccion-login {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: calc(100vh - 80px);
+    padding: 3rem 5%;
+    /* Fondo con degradado oscuro que se funde con la imagen */
+    background: linear-gradient(90deg, rgba(11,13,18,0.2) 0%, var(--bg-principal) 55%), 
+                url('../assets/fondo-moto.png') no-repeat left center / cover;
+}
+
+/* Lado Izquierdo (Textos) */
+.login-izq {
+    flex: 1;
+    max-width: 500px;
+}
+
+.etiqueta {
+    display: inline-block;
+    border: 1px solid var(--color-primario);
+    color: var(--color-primario);
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+}
+
+.login-izq h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.login-izq p {
+    font-size: 1.1rem;
+    color: var(--texto-gris);
+}
+
+/* Lado Derecho (Formulario) */
+.login-der {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.tarjeta-formulario {
+    background-color: var(--bg-tarjeta);
+    padding: 2.5rem;
+    border-radius: 1rem;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.tarjeta-formulario h2 {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.subtitulo-form {
+    text-align: center;
+    color: var(--texto-gris);
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+}
+
+.grupo-input {margin-bottom: 1.2rem;}
+
+.grupo-input label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--texto-gris);
+    margin-bottom: 0.5rem;
+}
+
+.caja-input {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.caja-input input {
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid var(--borde-sutil);
+    border-radius: 8px;
+    padding: 0.8rem 1rem 0.8rem 2.5rem;
+    color: var(--texto-blanco);
+    font-size: 0.95rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+.caja-input input:focus {
+    border-color: var(--color-primario);
+}
+
+.caja-input .icono-izq {
+    position: absolute;
+    left: 0.8rem;
+    color: var(--texto-gris);
+    width: 18px;
+}
+
+.caja-input .icono-der {
+    position: absolute;
+    right: 0.8rem;
+    color: var(--texto-gris);
+    width: 18px;
+    cursor: pointer;
+}
+
+.opciones-extra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+}
+
+.recordar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--texto-gris);
+    cursor: pointer;
+}
+
+.olvide-pass {color: var(--color-primario);}
+
+.btn-ingresar {
+    width: 100%;
+    background-color: var(--color-primario);
+    color: #000;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.9rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    transition: 0.3s;
+}
+
+.btn-ingresar:hover {
+    background-color: var(--color-primario-hover);
+}
+
+.separador {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--texto-gris);
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+}
+
+.separador::before,
+.separador::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid var(--borde-sutil);
+}
+
+.separador:not(:empty)::before { margin-right: 1rem; }
+.separador:not(:empty)::after { margin-left: 1rem; }
+
+.botones-sociales {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn-social {
+    flex: 1;
+    background-color: transparent;
+    border: 1px solid var(--borde-sutil);
+    color: var(--texto-blanco);
+    padding: 0.7rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-social img {width: 20px; height: 20px; display: block;      
+}
+
+.btn-social:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.texto-registro {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--texto-gris);
+}
+
+.texto-registro a {
+    color: var(--color-primario);
+    font-weight: 600;
+}
+footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid var(--borde-sutil);
+    color: var(--texto-gris);
+    font-size: 0.9rem;
+}
+/* -̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳==
+   RESPONSIVE MÓVIL (ANDROID)
+   -̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳== */
+@media (max-width: 768px) {
+    
+    /* .encabezado .menu, */
+    .btn-pedir,
+    .encabezado .btn-login {
+        display: none; 
+    }
+    
+    .encabezado {
+        padding: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .acciones {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .btn-pedir {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Ajustes del contenedor principal */
+    .seccion-login {
+        padding: 1.5rem 1rem;
+        justify-content: center;
+        background: var(--bg-principal); /* Fondo limpio, sin imagen cortada */
+    }
+
+    /* Ocultar el lado izquierdo completamente */
+    .login-izq {
+        display: none;
+    }
+
+    .login-der {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .tarjeta-formulario {
+        padding: 2rem 1.5rem;
+        max-width: 100%; /* Toma todo el ancho en móvil */
+        box-shadow: none; /* Diseño más plano para Android */
+        border: none;
+    }
+}

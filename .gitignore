@@ -1,0 +1,7 @@
+# Ignorar archivo de variables de entorno
+.env
+
+# Opcional: otros entornos
+.env.local
+.env.development
+.env.production

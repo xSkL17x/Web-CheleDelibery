@@ -7,57 +7,99 @@
     <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
     <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
     
-    <!-- Cambia el título según la página en la que estés -->
-    <title>Nombre de la Página | Chele Delivery</title>
-    <link rel="stylesheet" href="style/encabezado.css">
+    <title>Iniciar Sesión | Chele Delivery</title>
+    <link rel="stylesheet" href="style/login.css">
 </head>
 <body>
-    <!-- ☁☁☁ Barra Superior (Mantener en todas las páginas) ☁☁☁ -->
+    
+    <!-- ENCABEZADO -->
     <header class="encabezado">
         <div class="logo">
-            <a href="index.html"><img src="assets/logo.png" alt="Chele Delivery"></a>
+            <a href="index.html">
+                <img src="assets/logo.png" alt="Chele Delivery">
+            </a>
         </div>
         <nav class="menu">
             <ul>
-                <!-- Nota: Mueve la clase class="activo" al enlace que corresponda a la página actual -->
                 <li><a href="index.html">INICIO</a></li>
                 <li><a href="sv.html">SERVICIOS</a></li>
                 <li><a href="ns.html">NOSOTROS</a></li>
             </ul>
         </nav>
         <div class="acciones">
-            <div class="user-area">
-                <!-- Estado 1: Cerrado -->
-                <a href="is.html" id="btn-login" class="btn-login">
-                    Iniciar Sesión <img src="assets/icono-usuario.svg" alt="Usuario" class="icono">
-                </a>
-                <!-- Estado 2: Logueado -->
-                <div id="user-profile" class="user-profile hidden" style="display: none;">
-                    <span id="user-name">Cliente</span> 
-                    <img src="assets/default-avatar.png" id="user-avatar" alt="Avatar">
-                </div>
-            </div>
+            <!-- Se omitió el botón de login aquí por redundancia -->
             <a href="pa.html" class="btn-pedir">SOLICITAR DELIVERY</a>
         </div>
     </header>
-    <!-- ☁☁☁ Fin Barra Superior ☁☁☁ -->
 
-    <!-- ☁☁☁ Contenido Principal ☁☁☁ -->
+    <!-- CONTENIDO PRINCIPAL -->
     <main>
-        
-        <!-- ========================================== -->
-        <!-- AQUÍ VA EL CONTENIDO NUEVO DE CADA PÁGINA  -->
-        <!-- ========================================== -->
+        <section class="seccion-login">
+            
+            <!-- LADO IZQUIERDO (Se oculta en Android/Móviles según el CSS) -->
+            <div class="login-izq">
+                <span class="etiqueta">RÁPIDO • SEGURO • CONFIABLE</span>
+                <h1>Accede a tu cuenta</h1>
+                <p>Inicia sesión para gestionar tus pedidos, entregas y más.</p>
+            </div>
 
+            <!-- LADO DERECHO (Formulario) -->
+            <div class="login-der">
+                <div class="tarjeta-formulario">
+                    <h2>Bienvenido de vuelta</h2>
+                    <p class="subtitulo-form">Por favor inicia sesión para continuar</p>
+
+                    <form id="formulario-acceso">
+                        
+                        <!-- Correo Electrónico -->
+                        <div class="grupo-input">
+                            <label for="correo-usuario">Correo electrónico</label>
+                            <div class="caja-input">
+                                <svg class="icono-izq" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                <input type="email" id="correo-usuario" placeholder="ejemplo@correo.com" required>
+                            </div>
+                        </div>
+
+                        <!-- Contraseña -->
+                        <div class="grupo-input">
+                            <label for="contrasena-usuario">Contraseña</label>
+                            <div class="caja-input">
+                                <svg class="icono-izq" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                                <input type="password" id="contrasena-usuario" placeholder="••••••••" required>
+                                <svg class="icono-der" id="ver-contrasena" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                            </div>
+                        </div>
+
+                        <!-- Opciones Extra -->
+                        <div class="opciones-extra">
+                            <label class="recordar" for="casilla-recordar">
+                                <input type="checkbox" id="casilla-recordar">Recordarme </label>
+                            <a href="#" class="olvide-pass">¿Olvidaste tu contraseña?</a>
+                        </div>
+
+                        <!-- Botón Ingresar -->
+                        <button type="submit" id="btn-ingresar" class="btn-ingresar">
+                            Iniciar Sesión 
+                            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </button>
+                    </form>
+
+                    <!-- Redes Sociales -->
+                    <div class="separador">o continúa con</div>
+
+                    <div class="botones-sociales">
+                        <button class="btn-social" id="login-whatsapp"> <img src="assets/icono_whatsapp.svg"> WhatsApp</button>
+
+                    </div>
+
+                    <p class="texto-registro"> ¿No tienes cuenta? <a href="rg.html">Regístrate aquí</a> </p>
+                </div>
+            </div>
+
+        </section>
     </main>
-    <!-- ☁☁☁ Fin Contenido Principal ☁☁☁ -->
 
-    <!-- ☁☁☁ Pie de Página (Mantener en todas las páginas) ☁☁☁ -->
-    <footer>
-        <p>© 2026 Chele Delivery by Cyber Bam · Todos los Derechos Reservados.</p>
-    </footer>
-    
-    <!-- Script: Puedes cambiar este archivo JS dependiendo de si la página necesita funciones distintas -->
+    <footer><p>© 2026 Chele Delivery by Cyber Bam · Todos los Derechos Reservados.</p></footer>
     <script type="module" src="./js/idx.js"></script>
 </body>
 </html>

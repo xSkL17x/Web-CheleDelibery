@@ -1,19 +1,9 @@
-// const { createClient } = require('@supabase/supabase-js');
+import 'dotenv/config';
+import { createClient } from '@supabase/supabase-js';
 
-// const supabase = createClient(
-//     process.env.SUPABASE_URL,
-//     process.env.SUPABASE_KEY
-// );
+const supabaseUrl = process.env.SUPABASE_URL;
+const supabaseKey = process.env.SUPABASE_ANON_KEY;
 
-// module.exports = supabase;
-
-
-
-const { createClient } = require('@supabase/supabase-js');
-
-const supabase = createClient(
-    'https://qxinrvwsrchujpqyysvv.supabase.co',
-    'sb_publishable_60CeAR29OK4_sHCRibqprA_AaW8TaQz'
-);
-
-module.exports = supabase;
+if (!supabaseUrl || !supabaseKey) { throw new Error('Faltan las credenciales de Supabase en el archivo .env'); }
+const supabase = createClient(supabaseUrl, supabaseKey);
+export default supabase;

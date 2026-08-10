@@ -1,6 +1,6 @@
-/* ========================================================
+/* -̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳==
    VARIABLES GLOBALES Y RESETEO
-   ======================================================== */
+   -̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳== */
 :root {
     --bg-principal: #0b0d12;
     --bg-tarjeta: #151821;
@@ -39,9 +39,9 @@ img {
     display: block;
 }
 
-/* ========================================================
+/* -̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳==
    BARRA SUPERIOR (HEADER)
-   ======================================================== */
+   -̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳== */
 .encabezado {
     display: flex;
     justify-content: space-between;
@@ -55,7 +55,7 @@ img {
 }
 
 .logo img {
-    height: 45px;
+    height: 65px; /* 45 base*/
 }
 
 .menu ul {
@@ -119,9 +119,9 @@ img {
     height: 18px;
 }
 
-/* ========================================================
+/* -̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳==
    SECCIÓN PORTADA (HERO)
-   ======================================================== */
+   -̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳== */
 .hero {
     display: flex;
     justify-content: space-between;
@@ -131,7 +131,7 @@ img {
     /* Recomendación: Añade la imagen de fondo desde el HTML o aquí con la ruta correcta */
     background: linear-gradient(to right, #0b0d12 45%, transparent), 
                 url('../assets/fondo-moto.png') no-repeat right center / cover;
-    min-height: 70vh;
+    min-height: 40vh;
 }
 
 .hero-contenido {
@@ -156,8 +156,7 @@ img {
     font-size: 3.5rem;
     font-weight: 800;
     line-height: 1.1;
-    /* Nota: Para que "vale oro" sea amarillo como en la imagen, 
-       deberías envolver esas palabras en un <span> en tu HTML */
+    /* Nota: Para que "vale oro" sea amarillo como en la imagen, <span> en tu HTML */
 }
 
 #descripcion {
@@ -244,9 +243,9 @@ img {
     color: var(--texto-gris);
 }
 
-/* ========================================================
+/* -̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳==
    NEGOCIOS RECOMENDADOS
-   ======================================================== */
+   -̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳== */
 .seccion-negocios {
     padding: 3rem 5%;
 }
@@ -285,23 +284,28 @@ img {
     gap: 1.5rem;
 }
 
-/* Estilos de las tarjetas (Para cuando JS las genere) */
+
+/* Estilos de las tarjetas */
 .tarjeta-negocio {
     background-color: var(--bg-tarjeta);
     border-radius: 15px;
     overflow: hidden;
     border: 1px solid var(--borde-sutil);
-    transition: transform 0.3s;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .tarjeta-negocio:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px) scale(1.10); 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
 .imagen-contenedor {
     position: relative;
-    height: 140px;
+    height: 200px; /* 140base */
 }
+
+
 
 .img-negocio {
     width: 100%;
@@ -344,9 +348,48 @@ img {
     font-weight: 600;
 }
 
-/* ========================================================
+/* -̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳==
+   CARRUZEL DE NEGOCIOS (SCROLL INFINITO)
+   -̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳== */
+
+.carrusel-wrapper {
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+}
+
+#contenedor-negocios {
+    display: flex;
+    gap: 20px; /* Espacio entre cada tarjeta */
+    width: max-content; /* Permite que el contenedor se expanda todo lo necesario */
+    animation: scroll-infinito 40s linear infinite;
+}
+
+/* Evitar que las tarjetas se deformen o se encojan */
+.tarjeta-negocio {
+    flex: 0 0 auto;
+    width: 250px; /* Ajusta este ancho según el tamaño de las tarjetas en tu diseño */
+    white-space: normal; /* Para que la descripción baje de línea correctamente */
+}
+
+/* La animación que mueve todo hacia la izquierda */
+@keyframes scroll-infinito {
+    0% { 
+        transform: translateX(0); 
+    }
+    100% { 
+        /* Se mueve exactamente el 50% de su ancho total porque duplicamos los items en JS */
+        transform: translateX(-50%); 
+    }
+}
+/* Opcional: Pausar el carrusel cuando el usuario pone el mouse encima para que pueda leer/hacer clic */
+#contenedor-negocios:hover {
+    animation-play-state: paused;
+}
+
+/* -̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳==
    BARRA DE ESTADÍSTICAS
-   ======================================================== */
+   -̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳== */
 .barra-estadisticas {
     display: flex;
     justify-content: space-between;
@@ -389,9 +432,9 @@ img {
     background-color: var(--borde-sutil);
 }
 
-/* ========================================================
+/* -̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳==
    PIE DE PÁGINA (FOOTER)
-   ======================================================== */
+   -̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳== */
 footer {
     text-align: center;
     padding: 2rem;
@@ -399,20 +442,20 @@ footer {
     color: var(--texto-gris);
     font-size: 0.9rem;
 }
-
-/* ========================================================
-   RESPONSIVE DESIGN (Tablets y Móviles)
-   ======================================================== */
+/* -̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳==
+   RESPONSIVE DESIGN (Tablets y Laptops pequeñas)
+   -̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳== */
 @media (max-width: 1024px) {
     .hero {
         flex-direction: column;
         padding-top: 3rem;
+        min-height: auto;
     }
     .hero-contenido {
         max-width: 100%;
         text-align: center;
         align-items: center;
-        margin-bottom: 3rem;
+        margin-bottom: 2rem;
     }
     .hero-botones {
         justify-content: center;
@@ -425,18 +468,52 @@ footer {
     .separador-estadistica {
         display: none;
     }
+
+    .cabecera-negocios h2 {
+        font-size: 0.8rem;
+    }
+
+
 }
 
-/* ========================================================
-   AJUSTES ESPECÍFICOS PARA CELULARES (Fix para la imagen)
-   ======================================================== */
 @media (max-width: 768px) {
-    /* 1. Reparación de la Barra Superior (Encabezado) */
+    /* Ajuste de Portada para mostrar los negocios */
+    .hero {
+        padding: 2rem 5% 1rem 5%;
+    }
+    
+    .hero-contenido {
+        margin-bottom: 0.5rem; /* Reducir el margen inferior  1.5rem;*/
+        gap: 1rem;
+        text-align: center;
+        align-items: center;
+    }
+
+    .hero-etiqueta span {
+        font-size: 0.65rem; 
+        padding: 0.3rem 0.6rem;
+        display: inline-block;
+        white-space: nowrap;
+    }
+
+    #slogan {
+        font-size: 2.2rem;
+    }
+
+    #descripcion {
+        font-size: 0.95rem;
+    }
+
+    .hero-caracteristicas { 
+        display: none;  
+    } 
+
+    /* Ajuste de Encabezado y Menú */
     .encabezado {
-        flex-wrap: wrap; /* Permite que los elementos bajen de línea */
+        flex-wrap: wrap;
         justify-content: center;
         gap: 1rem;
-        padding: 1.5rem 1rem;
+        padding: 1rem;
     }
     
     .logo {
@@ -446,56 +523,48 @@ footer {
     }
     
     .acciones {
-        order: 2; /* Sube las acciones arriba del menú */
+        order: 2;
         width: 100%;
         justify-content: center;
     }
 
     .btn-login {
-        white-space: nowrap; /* Evita que el texto se rompa y deforme el botón */
-        width: 100%; /* Botón ancho para móvil */
+        white-space: nowrap;
+        width: 100%;
         justify-content: center;
     }
 
     .btn-pedir {
-        display: none; /* Ocultamos el del header porque ya está en la portada */
+        display: none;
     }
     
     .menu {
-        order: 3; /* Pasa los enlaces a la parte inferior del encabezado */
+        order: 3;
         width: 100%;
         margin-top: 0.5rem;
     }
     
     .menu ul {
         justify-content: center;
-        flex-wrap: wrap; /* Si los enlaces no caben, bajan de línea */
-        gap: 1rem 1.5rem;
+        flex-wrap: wrap;
+        gap: 1rem;
     }
     
     .menu a {
-        font-size: 0.8rem; /* Letra un poco más pequeña en celular */
+        font-size: 0.8rem;
     }
 
-    /* 2. Reparación de la Portada (Hero) */
-    #slogan {
-        font-size: 2.5rem; /* Ajusta el título para que no sea tan masivo */
-    }
-
+    /* Ajuste de Botones */
     .hero-botones {
-        flex-direction: column; /* Apila los botones de la portada verticalmente */
+        flex-direction: column;
         width: 100%;
         gap: 1rem;
     }
 
-    .btn-whatsapp, .btn-secundario {
+    .btn-whatsapp, 
+    .btn-secundario {
         width: 100%;
-        justify-content: center; /* Centra el icono y el texto */
+        justify-content: center;
         white-space: nowrap;
-    }
-    
-    .hero-caracteristicas {
-        min-width: 100%; /* La tarjeta lateral toma todo el ancho */
-        padding: 1.5rem;
     }
 }

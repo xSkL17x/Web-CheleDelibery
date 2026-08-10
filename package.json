@@ -1,11 +1,12 @@
 {
   "name": "web-delibery",
   "version": "1.0.0",
-  "description": "��#\u0000 \u0000W\u0000e\u0000b\u0000-\u0000C\u0000h\u0000e\u0000l\u0000e\u0000D\u0000e\u0000l\u0000i\u0000b\u0000e\u0000r\u0000y\u0000\r\u0000 \u0000",
+  "description": "Sistema de delivery web para Chele Delivery",
+  "type": "module",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -14,7 +15,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/xSkL17x/Web-CheleDelibery/issues"
   },
@@ -22,6 +22,7 @@
   "dependencies": {
     "@supabase/server": "^1.4.1",
     "@supabase/supabase-js": "^2.112.0",
+    "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "sqlite3": "^6.0.1"
   }
