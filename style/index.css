@@ -39,85 +39,6 @@ img {
     display: block;
 }
 
-/* -̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳==
-   BARRA SUPERIOR (HEADER)
-   -̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳== */
-.encabezado {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 5%;
-    background-color: var(--bg-principal);
-    border-bottom: 1px solid var(--borde-sutil);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.logo img {
-    height: 65px; /* 45 base*/
-}
-
-.menu ul {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-}
-
-.menu a {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--texto-gris);
-    letter-spacing: 1px;
-    padding-bottom: 0.5rem;
-    transition: color 0.3s;
-}
-
-.menu a:hover,
-.menu a.activo {
-    color: var(--texto-blanco);
-}
-
-.menu a.activo {
-    border-bottom: 2px solid var(--color-primario);
-}
-
-.acciones {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.btn-login,
-.btn-pedir {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.7rem 1.2rem;
-    border-radius: 50px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.btn-login {
-    background-color: var(--color-primario);
-    color: #000;
-}
-
-.btn-login:hover { background-color: var(--color-primario-hover); }
-
-.btn-pedir {
-    background-color: var(--color-secundario);
-    color: var(--texto-blanco);
-}
-
-.btn-pedir:hover { background-color: var(--color-secundario-hover); }
-
-.icono {
-    width: 18px;
-    height: 18px;
-}
 
 /* -̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳==
    SECCIÓN PORTADA (HERO)
@@ -374,13 +295,8 @@ img {
 
 /* La animación que mueve todo hacia la izquierda */
 @keyframes scroll-infinito {
-    0% { 
-        transform: translateX(0); 
-    }
-    100% { 
-        /* Se mueve exactamente el 50% de su ancho total porque duplicamos los items en JS */
-        transform: translateX(-50%); 
-    }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
 /* Opcional: Pausar el carrusel cuando el usuario pone el mouse encima para que pueda leer/hacer clic */
 #contenedor-negocios:hover {
@@ -432,16 +348,6 @@ img {
     background-color: var(--borde-sutil);
 }
 
-/* -̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳==
-   PIE DE PÁGINA (FOOTER)
-   -̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳== */
-footer {
-    text-align: center;
-    padding: 2rem;
-    border-top: 1px solid var(--borde-sutil);
-    color: var(--texto-gris);
-    font-size: 0.9rem;
-}
 /* -̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳==
    RESPONSIVE DESIGN (Tablets y Laptops pequeñas)
    -̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳-̳== */

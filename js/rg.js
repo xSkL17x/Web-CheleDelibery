@@ -1,64 +1,79 @@
-// js/rg.js
+import { vercontra } from './utilidades.js';
 
 
 class PaginaRegistro {
-  constructor() {
-    // Referencias a los elementos del DOM
-    this.formulario = document.getElementById('formulario-registro');
-    this.inputNombre = document.getElementById('nombre');
-    this.inputCelular = document.getElementById('celular');
-    this.inputDireccion = document.getElementById('direccion');
+  constructor(formId) {
+    this.formulario = document.getElementById(formId);
+    if (this.formulario) {
+      this.inputNombre = document.getElementById('nombre');
+      this.inputCelular = document.getElementById('celular');
+      this.inputPassword = document.getElementById('contrasena-usuario');
+      this.inputConfirmPassword = document.getElementById('contrasena-repetida');
+    }
+  }
+
+
+  obtenerDatos() {
+    return {
+      nombre: this.inputNombre.value.trim(),
+      celular: this.inputCelular.value.trim(),
+      password: this.inputPassword.value,
+      confirmPassword: this.inputConfirmPassword.value
+    };
+  }
+
+
+  validarDatos({ nombre, celular, password, confirmPassword }) {
+
+    if (!nombre || !celular || !password || !confirmPassword) { alert("Por favor, completa todos los campos obligatorios."); return false; }
+    if (password.length < 6) { alert("La contraseña debe tener al menos 6 caracteres."); return false; }
+    if (password !== confirmPassword) { alert("Las contraseñas no coinciden. Por favor, verifícalas."); return false; }
+    return true;
+  }
+
+
+  async guardarEnBaseDeDatos(datosBackend) {
+
+    const respuesta = await fetch('http://localhost:3000/registro', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(datosBackend)
+    });
+
+    const resultado = await respuesta.json();
+    if (!respuesta.ok) { throw new Error(resultado.error || 'Error al procesar el registro'); }
+    return resultado;
   }
 
   async manejarRegistro(evento) {
-    evento.preventDefault(); // Evita que la página se recargue
-
-    // Extraer y limpiar los valores
-    const nombre = this.inputNombre.value.trim();
-    const celular = this.inputCelular.value.trim();
-    const direccion = this.inputDireccion.value.trim();
-
-    // Validación de seguridad extra
-    if (!nombre || !celular || !direccion) {
-      alert("Por favor, completa todos los campos obligatorios.");
-      return;
-    }
-
+    if (evento) evento.preventDefault(); 
+    const datos = this.obtenerDatos();
+    if (!this.validarDatos(datos)) return;
+    const datosBackend = { nombre: datos.nombre, celular: datos.celular, password: datos.password, confirmPassword: datos.confirmPassword };
     try {
-      // ==========================================
-      // Aquí irá tu lógica de base de datos (Ej. fetch a tu endpoint o Supabase)
-      // await supabase.from('perfiles').insert([{ nombre, celular, direccion }]);
-      // ==========================================
-
-      console.log("Datos registrados localmente:", { nombre, celular, direccion });
-      alert(`¡Cuenta creada con éxito!\nBienvenido/a a Chele Delivery, ${nombre}.`);
-
-      // Limpiar formulario y redirigir
+      await this.guardarEnBaseDeDatos(datosBackend);
+      alert(`¡Cuenta creada con éxito!\nBienvenido/a a Chele Delibery, ${datos.nombre}.`);
       this.formulario.reset();
       window.location.href = "is.html"; 
-
-    } catch (error) {
-      console.error("Error procesando el registro:", error);
-      alert("Hubo un problema al registrar la cuenta.");
-    }
+    } catch (error) { alert(error.message || "Hubo un problema al registrar la cuenta. Por favor, intenta de nuevo."); }
   }
 
   configurarEventos() {
-    if (this.formulario) {
-      // Usamos una función flecha para que 'this' siga apuntando a la clase
-      this.formulario.addEventListener('submit', (evento) => this.manejarRegistro(evento));
-    } else {
-      console.error("Formulario de registro no encontrado en el DOM.");
-    }
+    this.formulario.addEventListener('submit', (evento) => this.manejarRegistro(evento));
+    vercontra('#icon-contrasena-usuario', '#contrasena-usuario');
+    vercontra('#icon-contrasena-repetida', '#contrasena-repetida');
   }
 
-  async inizializar() {
-    this.configurarEventos();
+
+  inicializar() {
+    if (this.formulario) { this.configurarEventos(); } 
+    else { console.error("Formulario de registro no encontrado en el DOM."); }
   }
+
 }
 
-// Instanciar e inicializar cuando el DOM esté listo
+
 document.addEventListener("DOMContentLoaded", () => {
-  const registro = new PaginaRegistro();
-  registro.inizializar();
+  const registro = new PaginaRegistro('formulario-registro');
+  registro.inicializar();
 });

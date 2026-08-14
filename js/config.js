@@ -1,9 +1,8 @@
-import supabase from './supabase.js';
+import supabase from './supabase-server.js';
 
 let configCache = null;
 
 async function cargarConfig() {
-
     if (configCache) {
         console.log("⚡ Configuración desde caché.");
         return configCache;
@@ -13,13 +12,12 @@ async function cargarConfig() {
 
     const { data, error } = await supabase.from('web_config').select('*');
 
-    if (error) {
-        console.error(error);
-        return null;
+    if (error) { 
+        if (process.env.NODE_ENV !== 'production') { console.error(error); } 
+        return null; 
     }
-
+    
     const config = {};
-
     data.forEach(item => { config[item.id] = item.valor; });
 
     configCache = {
@@ -28,7 +26,7 @@ async function cargarConfig() {
         numero: config.numero
     };
 
-    console.log("✅ Configuración guardada en caché.");
+    if (process.env.NODE_ENV !== 'production') { console.log("✅ Configuración guardada en caché."); }
 
     return configCache;
 }
@@ -37,8 +35,4 @@ function actualizarCache(nuevaConfig) {
     configCache = nuevaConfig;
 }
 
-// Exportamos las funciones con la sintaxis moderna
-export {
-    cargarConfig,
-    actualizarCache
-};
+export { cargarConfig, actualizarCache };

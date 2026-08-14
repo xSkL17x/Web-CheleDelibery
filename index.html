@@ -8,12 +8,14 @@
     <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
     <!-- Estilo y Inicio -->
     <title>Inicio | Chele Delivery</title>
-    <link rel="stylesheet" href="style/encabezado.css">
+    <link rel="stylesheet" href="style/encabezado-flooter.css">
+    <link rel="stylesheet" href="style/index.css">
+    
 </head>
 <body>
     <!-- ☁☁☁ Barra Superior ☁☁☁ -->
     <header class="encabezado">
-        <div class="logo"><a href="pa.html"><img src="assets/logo.png" alt="Chele Delivery"></a></div>
+        <div class="logo"><a href="pa.html"><img src="assets/logo.png" loading="lazy" alt="Chele Delivery"></a></div>
         <nav class="menu">
             <ul>
                 <li><a href="#" class="activo">INICIO</a></li>
@@ -23,14 +25,28 @@
         </nav>
         <div class="acciones">
             <div class="user-area">
-                <!-- Estado 1: Cerrado -->
-                <a href="is.html" id="btn-login" class="btn-login">Iniciar Sesión <img src="assets/icono-usuario.svg" alt="Usuario" class="icono"></a>
+                <!-- Estado 1: Sin Loguear -->
+                <a href="is.html" id="btn-login" class="btn-login"> 
+                    Iniciar Sesión <img src="assets/icono-usuario.svg" loading="lazy" alt="Usuario" class="icono"> 
+                </a>
+
                 <!-- Estado 2: Logueado -->
-                <div id="user-profile" class="user-profile hidden" style="display: none;">
-                    <!-- <span id="user-name">Cliente</span> <img src="assets/default-avatar.png" id="user-avatar" alt="Avatar"> -->
+                <div id="Perfil_Usuario" class="Perfil_Usuario" style="display: none;">
+                    <!-- Solo el avatar visible por defecto -->
+                    <img src="" id="user-avatar" loading="lazy" alt="Avatar" class="avatar-img">
+                    
+                    <!-- Menú Desplegable (Oculto inicialmente) -->
+                    <div id="dropdown-menu" class="dropdown-menu">
+                        <div class="dropdown-header">
+                            <span id="user-name"></span>
+                        </div>
+                        <hr class="dropdown-divider">
+                        <a href="perfil.html" class="dropdown-item">Perfil</a>
+                        <button id="Cerrar-Sesion" class="dropdown-item btn-salir">Cerrar Sesión</button>
+                    </div>
                 </div>
             </div>
-            <a href="pa.html" class="btn-pedir">SOLICITAR DELIVERY </a>
+            <a href="pa.html" class="btn-login" >SOLICITAR DELIVERY </a>
         </div>
     </header>
     <!-- ☁☁☁ Fin Barra Superior ☁☁☁ -->
@@ -50,19 +66,19 @@
             <!-- Panel flotante lateral derecho -->
             <aside class="hero-caracteristicas">
                 <div class="item-caracteristica">
-                    <img src="assets/icono-paquete-rapido.svg" alt="" class="icono-caracteristica">
+                    <img src="assets/icono-paquete-rapido.svg"  loading="lazy" alt="" class="icono-caracteristica">
                     <div class="texto-caracteristica"><strong>Entregas rápidas</strong><span>En minutos</span></div>
                 </div>
                 <div class="item-caracteristica">
-                    <img src="assets/icono-escudo.svg" alt="" class="icono-caracteristica">
+                    <img src="assets/icono-escudo.svg" alt="" loading="lazy" class="icono-caracteristica">
                     <div class="texto-caracteristica"><strong>Seguro y confiable</strong><span>Tu pedido en buenas manos</span></div>
                 </div>
                 <div class="item-caracteristica">
-                    <img src="assets/icono-reloj.svg" alt="" class="icono-caracteristica">
+                    <img src="assets/icono-reloj.svg" alt="" loading="lazy" class="icono-caracteristica">
                     <div class="texto-caracteristica"><strong>Soporte 24/7</strong><span>Estamos para ayudarte</span></div>
                 </div>
                 <div class="item-caracteristica">
-                    <img src="assets/icono-ubicacion.svg" alt="" class="icono-caracteristica">
+                    <img src="assets/icono-ubicacion.svg" alt="" loading="lazy" class="icono-caracteristica">
                     <div class="texto-caracteristica"><strong>Cobertura local</strong><span>Matagalpa y alrededores</span></div>
                 </div>
             </aside>
@@ -71,7 +87,7 @@
         <!-- Sección: Negocios Recomendados -->
         <section class="seccion-negocios">
             <div class="cabecera-negocios">
-                <h2>Negocios recomendados <img src="assets/icono-estrella-brillo.svg" alt="Destacado" class="icono-titulo"></h2>
+                <h2>Negocios recomendados <img src="assets/icono-estrella-brillo.svg" loading="lazy" alt="Destacado" class="icono-titulo"></h2>
                 <a href="#" class="btn-ver-mas">Ver todos los negocios →</a>
             </div>
             <!-- Contenedor vacío donde JS cargará los negocios -->
@@ -84,27 +100,27 @@
         <!-- Barra inferior de Estadísticas/Beneficios -->
         <section class="barra-estadisticas">
             <div class="item-estadistica">
-                <img src="assets/icono-paquete-rapido.svg" alt="Entregas" class="icono-grande">
+                <img src="assets/icono-paquete-rapido.svg" loading="lazy" alt="Entregas" class="icono-grande">
                 <div class="texto-estadistica"><strong>Entregas en minutos</strong><span>Rápido y sin complicaciones</span></div>
             </div>
             <div class="separador-estadistica"></div>
             <div class="item-estadistica">
-                <img src="assets/icono-escudo.svg" alt="Seguro" class="icono-grande">
+                <img src="assets/icono-escudo.svg" loading="lazy" alt="Seguro" class="icono-grande">
                 <div class="texto-estadistica"><strong>Tu pedido seguro</strong><span>Cuidamos cada entrega</span></div>
             </div>
             <div class="separador-estadistica"></div>
             <div class="item-estadistica">
-                <img src="assets/icono-bolsa.svg" alt="Pedidos" class="icono-grande">
+                <img src="assets/icono-bolsa.svg" loading="lazy" alt="Pedidos" class="icono-grande">
                 <div class="texto-estadistica"><strong>+4,500</strong><span>Pedidos entregados</span></div>
             </div>
             <div class="separador-estadistica"></div>
             <div class="item-estadistica">
-                <img src="assets/icono-ubicacion.svg" alt="Cobertura" class="icono-grande">
+                <img src="assets/icono-ubicacion.svg"  loading="lazy" alt="Cobertura" class="icono-grande">
                 <div class="texto-estadistica"><strong>Cobertura local</strong><span>Matagalpa y alrededores</span></div>
             </div>
             <div class="separador-estadistica"></div>
             <div class="item-estadistica">
-                <img src="assets/icono-cara-feliz.svg" alt="Satisfacción" class="icono-grande">
+                <img src="assets/icono-cara-feliz.svg" loading="lazy" alt="Satisfacción" class="icono-grande">
                 <div class="texto-estadistica"><strong>98%</strong><span>Clientes satisfechos</span></div>
             </div>
         </section>
@@ -112,5 +128,6 @@
 
     <footer><p>© 2026 Chele Delivery by Cyber Bam · Todos los Derechos Reservados.</p></footer>
     <script type="module" src="./js/idx.js"></script>
+    <script type="module" src="/js/usuario.js"></script>
 </body>
 </html>
