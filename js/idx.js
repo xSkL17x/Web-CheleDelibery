@@ -1,5 +1,7 @@
 class PaginaInicio {
+
   constructor() { this.config = null; this.negocios = []; }
+
   async cargarconfigs() {
     try {
       const respuesta = await fetch('http://localhost:3000/config');
@@ -14,7 +16,6 @@ class PaginaInicio {
       if (numero) numero.innerHTML = this.config.numero;
 
       
-
       if (btnWhatsapp && this.config.numero) {
         const telefonoLimpio = this.config.numero.replace(/\D/g, ''); 
         const mensaje = encodeURIComponent("¡Hola! Quiero solicitar un Chele Delibery");
@@ -23,6 +24,7 @@ class PaginaInicio {
       }
     } catch (error) { console.error("Error cargando configuración:", error); }
   }
+
   async cargarNegocios() {
     try {
       const respuesta = await fetch('http://localhost:3000/negocios');
@@ -31,7 +33,10 @@ class PaginaInicio {
       this.renderizarNegocios(this.negocios);
     } catch (error) { console.error("Error cargando la BD de Negocios:", error); }
   }
+
   obtenerUrlStorage(urlDb) {
+    return 'assets/tiendas_default.png'; //Temporal
+
     if (!urlDb) return 'assets/tiendas_default.png';
     const baseUrl ="https://qxinrvwsrchujpqyysvv.supabase.co/storage/v1/object/public/img_negocios/";
     console.log(urlDb);

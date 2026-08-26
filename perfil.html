@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- PyScript -->
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+    <!-- Estilo y Inicio -->
+    <title>RECOMPENSAS | Chele Delivery</title>
+    <link rel="stylesheet" href="style/encabezado-flooter.css">
+    <link rel="stylesheet" href="style/Rewards.css">
+    
+</head>
+<body>
+    <!-- ☁☁☁ Barra Superior ☁☁☁ -->
+    <header class="encabezado">
+        <div class="logo"><a href="pa.html"><img src="assets/logo.png" loading="lazy" alt="Chele Delivery"></a></div>
+        <nav class="menu">
+            <ul>
+                <li><a href="#" class="activo">INICIO</a></li>
+                <li><a href="reward.html">MIS RECOMPENSAS</a></li>
+                <li><a href="sv.html">SERVICIOS</a></li>
+                <li><a href="ns.html">NOSOTROS</a></li>
+            </ul>
+        </nav>
+        <div class="acciones">
+            <div class="user-area">
+                <!-- Estado 1: Sin Loguear -->
+                <a href="is.html" id="btn-login" class="btn-login"> 
+                    Iniciar Sesión <img src="assets/icono-usuario.svg" loading="lazy" alt="Usuario" class="icono"> 
+                </a>
+
+                <!-- Estado 2: Logueado -->
+                <div id="Perfil_Usuario" class="Perfil_Usuario" style="display: none;">
+                    <!-- Solo el avatar visible por defecto -->
+                    <img src="" id="user-avatar" loading="lazy" alt="Avatar" class="avatar-img">
+                    
+                    <!-- Menú Desplegable (Oculto inicialmente) -->
+                    <div id="dropdown-menu" class="dropdown-menu">
+                        <div class="dropdown-header">
+                            <span id="user-name"></span>
+                        </div>
+                        <hr class="dropdown-divider">
+                        <a href="perfil.html" class="dropdown-item">Perfil</a>
+                        <button id="Cerrar-Sesion" class="dropdown-item btn-salir">Cerrar Sesión</button>
+                    </div>
+                </div>
+            </div>
+            <a href="pa.html" class="btn-login" >SOLICITAR DELIVERY </a>
+        </div>
+    </header>
+    <!-- ☁☁☁ Fin Barra Superior ☁☁☁ -->
+
+    <main>
+        <!-- Encabezado del Panel -->
+        <div class="panel-encabezado">
+            <h1>Mi Perfil</h1>
+            <p>Gestiona tus datos personales y direcciones de entrega</p>
+        </div>
+
+        <!-- Contenedor Principal (1 sola columna centrada) -->
+        <div class="contenedor-perfil">
+            <section class="tarjeta">
+                <div class="titulo-seccion">DATOS PERSONALES <span class="icono-edit">📝</span></div>
+                <form id="form-datos">
+                    <div class="grupo-input">
+                        <label>Nombre Completo</label>
+                        <input type="text" id="perfil-nombre" value="Juan Pérez" readonly>
+                    </div>
+                    <div class="grupo-input">
+                        <label>Dirección de Entrega Principal</label>
+                        <textarea id="perfil-direccion" rows="3" readonly>Calle Principal #123, Matagalpa, Nicaragua</textarea>
+                    </div>
+                    <div class="grupo-input">
+                        <label>Número de Celular</label>
+                        <input type="text" id="perfil-celular" value="+505 8888 7777" readonly>
+                    </div>
+                    <div class="contenedor-btn-derecha">
+                        <button type="button" class="btn-editar">Editar Datos</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer><p>© 2026 Chele Delivery by Cyber Bam · Todos los Derechos Reservados.</p></footer>
+    <script type="module" src="/js/usuario.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+    <title>RECOMPENSAS | Chele Delivery</title>
+    <link rel="stylesheet" href="style/encabezado-flooter.css">
+    <link rel="stylesheet" href="style/Rewards.css">
+</head>
+<body>
+    <header class="encabezado">
+        <div class="logo"><a href="pa.html"><img src="assets/logo.png" loading="lazy" alt="Chele Delivery"></a></div>
+        <nav class="menu">
+            <ul>
+                <li><a href="#" class="activo">INICIO</a></li>
+                <li><a href="reward.html">MIS RECOMPENSAS</a></li>
+                <li><a href="sv.html">SERVICIOS</a></li>
+                <li><a href="ns.html">NOSOTROS</a></li>
+            </ul>
+        </nav>
+        <div class="acciones">
+            <div class="user-area">
+                <a href="is.html" id="btn-login" class="btn-login"> 
+                    Iniciar Sesión <img src="assets/icono-usuario.svg" loading="lazy" alt="Usuario" class="icono"> 
+                </a>
+                <div id="Perfil_Usuario" class="Perfil_Usuario" style="display: none;">
+                    <img src="" id="user-avatar" loading="lazy" alt="Avatar" class="avatar-img">
+                    <div id="dropdown-menu" class="dropdown-menu">
+                        <div class="dropdown-header"><span id="user-name"></span></div>
+                        <hr class="dropdown-divider">
+                        <a href="perfil.html" class="dropdown-item">Perfil</a>
+                        <button id="Cerrar-Sesion" class="dropdown-item btn-salir">Cerrar Sesión</button>
+                    </div>
+                </div>
+            </div>
+            <a href="pa.html" class="btn-login">SOLICITAR DELIVERY </a>
+        </div>
+    </header>
+
+    <main>
+        <div class="panel-encabezado">
+            <h1>Recompensas y Pedidos</h1>
+            <p>Consulta tus puntos acumulados, recompensas y el estado de tus entregas</p>
+        </div>
+
+        <div class="contenedor-rewards">
+            <!-- COLUMNA 1: Puntos y Recompensas -->
+            <section class="tarjeta">
+                <div class="titulo-seccion">PEDIDOS Y PUNTOS</div>
+                <p class="subtitulo-seccion">MIS PUNTOS</p>
+                <div class="caja-puntos">
+                    <p>Puntos Actuales:</p>
+                    <h3 id="puntos-actuales">0</h3>
+                </div>
+                
+                <p class="subtitulo-seccion" style="margin-top: 30px;">B. MIS RECOMPENSAS</p>
+                <div class="contenedor-cupones" id="contenedor-cupones"></div>
+
+                <div class="contenedor-btn-centro">
+                    <button type="button" class="btn-editar" id="btn-canjear">Canjear puntos</button>
+                </div>
+            </section>
+
+            <!-- COLUMNA 2: Cupones Canjeados y Pedidos -->
+            <section class="tarjeta" id="tarjeta">
+                <div class="titulo-seccion">MIS CUPONES CANJEADOS</div>
+                <div class="contenedor-cupones-canjeados" id="contenedor-cupones-canjeados"></div>
+            </section>
+        </div>
+    </main>
+
+    <footer><p>© 2026 Chele Delivery by Cyber Bam · Todos los Derechos Reservados.</p></footer>
+    <script type="module" src="/js/usuario.js"></script>
+    <script type="module" src="/js/reward.js"></script>
+    <script type="module" src="/js/pedidos.js"></script>
+</body>
+</html>

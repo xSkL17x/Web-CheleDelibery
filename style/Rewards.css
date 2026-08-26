@@ -1,0 +1,337 @@
+:root {
+  --bg-principal: #0b0d14; 
+  --bg-tarjeta: #1a1d27; 
+  --color-primario: #ffcc00; 
+  --color-primario-hover: #e6b800;
+  --texto-principal: #ffffff;
+  --texto-secundario: #9ca3af;
+  --borde-suave: rgba(255, 255, 255, 0.08);
+  --exito: #4ade80;
+}
+
+body {
+  background: linear-gradient(90deg, rgba(11, 13, 18, 0.1) 0%, var(--bg-principal) 40%, var(--bg-principal) 100%), 
+              url('../assets/fondo-moto.png') no-repeat left center / cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: var(--texto-principal);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+}
+
+/* ———————————————๑•̀ᴗ•̀) ̫ ─꒱ ENCABEZADO DE SECCIÓN ——————————————— */
+.panel-encabezado { 
+  max-width: 1000px; 
+  margin: 40px auto 0; 
+  padding: 0 20px; 
+}
+.panel-encabezado h1 { 
+  font-size: 1.8rem; 
+  font-weight: 700; 
+  margin: 0; 
+}
+.panel-encabezado p { 
+  color: var(--texto-secundario); 
+  margin-top: 5px; 
+}
+
+/* ———————————————๑•̀ᴗ•̀) ̫ ─꒱ GRID PRINCIPAL ——————————————— */
+.contenedor-rewards {
+  max-width: 1000px; 
+  margin: 30px auto 60px;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+/* Tarjetas */
+.tarjeta {
+  background-color: rgba(26, 29, 39, 0.95); 
+  backdrop-filter: blur(5px);
+  border-radius: 16px;
+  padding: 30px;
+  border: 1px solid var(--borde-suave);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  box-sizing: border-box; /* Evita que el padding rompa el ancho en móviles */
+}
+
+.titulo-seccion {
+  font-size: 1.1rem; 
+  font-weight: 600; 
+  text-transform: uppercase;
+  letter-spacing: 1px; 
+  margin-bottom: 25px; 
+  border-bottom: 1px solid var(--borde-suave); 
+  padding-bottom: 10px;
+}
+.subtitulo-seccion { 
+  font-weight: bold; 
+  margin-bottom: 15px; 
+}
+
+.fila-puntos-resumen {
+    display: flex;
+    gap: 15px;
+    align-items: stretch;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.fila-puntos-resumen .caja-puntos {
+    flex: 1;
+    margin-bottom: 0; /* Evita desalineación si tenías margen inferior */
+}
+
+/* Botones / Enlaces comunes */
+.btn-editar {
+  background: transparent; 
+  color: var(--texto-principal); 
+  border: 1px solid var(--texto-secundario);
+  padding: 10px 24px; 
+  border-radius: 20px; 
+  cursor: pointer; 
+  transition: all 0.3s;
+}
+.btn-editar:hover { 
+  border-color: var(--color-primario); 
+  color: var(--color-primario); 
+}
+.contenedor-btn-centro { 
+  text-align: center; 
+  margin-top: 25px; 
+}
+.texto-primario { 
+  color: var(--color-primario); 
+}
+.enlace-accion { 
+  color: var(--color-primario); 
+  font-size: 0.9rem; 
+  text-decoration: none; 
+}
+.enlace-accion-sm { 
+  color: var(--color-primario); 
+  font-size: 0.85rem; 
+  text-decoration: none; 
+}
+.enlace-muted { 
+  color: var(--texto-secundario); 
+  font-size: 0.85rem; 
+  text-decoration: none; 
+}
+.enlace-muted:hover { 
+  color: var(--texto-principal); 
+}
+
+/* ———————————————๑•̀ᴗ•̀) ̫ ─꒱ PUNTOS Y RECOMPENSAS ——————————————— */
+.caja-puntos {
+  background: linear-gradient(90deg, #ffcc00 0%, #ffd633 100%); 
+  color: #000;
+  border-radius: 12px; 
+  padding: 24px 20px; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  gap: 12px;
+  box-shadow: 0 0 10px rgba(255, 204, 0, 0.4), 0 0 30px rgba(255, 204, 0, 0.3), 0 0 60px rgba(255, 204, 0, 0.2);
+}
+.caja-puntos p { 
+  font-size: 1.3rem; 
+  font-weight: 500; 
+  margin: 0; 
+}
+.caja-puntos h3 { 
+  font-size: 1.8rem; 
+  font-weight: 900; 
+  margin: 0; 
+  letter-spacing: 0.5px; 
+}
+
+/* Cupones */
+.contenedor-cupones { 
+  display: flex; 
+  gap: 15px; 
+  justify-content: space-between; 
+}
+
+.cupon {
+  appearance: none;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(180deg, var(--color-primario) 0%, var(--color-primario) 50%, #7a1515 50%, #7a1515 53%, var(--bg-principal) 53%, var(--bg-principal) 100%);
+  border-radius: 12px; 
+  border: 1px solid var(--borde-suave);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 140px;
+  padding: 15px 5px;
+  flex: 1;
+  position: relative;
+}
+
+.cupon:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(255, 204, 0, 0.3);
+  border-color: var(--color-primario);
+}
+
+.cupon::before, .cupon::after {
+  content: ''; 
+  position: absolute; 
+  top: 51.5%; 
+  width: 18px; 
+  height: 18px;
+  background-color: var(--bg-tarjeta); 
+  border-radius: 50%; 
+  transform: translateY(-50%); 
+  z-index: 2;
+}
+.cupon::before { left: -10px; box-shadow: inset -1px 0 0 var(--borde-suave); }
+.cupon::after { right: -10px; box-shadow: inset 1px 0 0 var(--borde-suave); }
+
+.cupon-valor { color: #111; font-size: 1.8rem; font-weight: 900; line-height: 1; }
+.cupon-tipo { color: #111; font-size: 0.75rem; font-weight: 900; margin-bottom: auto; margin-top: 5px; }
+.cupon-req { font-size: 0.85rem; font-weight: bold; color: var(--texto-principal); margin-top: auto; }
+
+/* ———————————————๑•̀ᴗ•̀) ̫ ─꒱ ESTADOS DE CUPONES (Bloqueado / Seleccionado) ——————————————— */
+.cupon.cupon-bloqueado {
+  background: linear-gradient(180deg, #374151 0%, #374151 50%, #1f2937 50%, #1f2937 53%, var(--bg-principal) 53%, var(--bg-principal) 100%);
+  cursor: not-allowed;
+  opacity: 0.8;
+  border-color: var(--borde-suave);
+  pointer-events: none; 
+}
+
+.cupon.cupon-bloqueado:hover {
+  transform: none; 
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3); 
+  border-color: var(--borde-suave); 
+}
+
+.cupon.cupon-bloqueado .cupon-valor,
+.cupon.cupon-bloqueado .cupon-tipo {
+  color: #6b7280; 
+}
+
+.cupon.cupon-bloqueado .cupon-req {
+  color: var(--texto-secundario);
+}
+
+.cupon.cupon-seleccionado {
+  border: 2px solid #ffffff; 
+  box-shadow: 0 0 25px rgba(255, 204, 0, 0.6); 
+  transform: scale(1.05); 
+}
+
+/* ———————————————๑•̀ᴗ•̀) ̫ ─꒱ SECCIÓN DE PEDIDOS ——————————————— */
+.pedido-actual { 
+  background-color: rgba(0,0,0,0.2); 
+  border: 1px solid var(--borde-suave); 
+  padding: 20px; 
+  border-radius: 12px; 
+  margin-bottom: 24px; 
+}
+.pedido-estado-header { 
+  display: flex; 
+  justify-content: space-between; 
+  font-weight: bold; 
+}
+.barra-progreso-fondo { 
+  width: 100%; 
+  height: 6px; 
+  background-color: #0b0d14; 
+  border-radius: 4px; 
+  margin: 15px 0; 
+  overflow: hidden; 
+}
+.barra-progreso-llena { 
+  width: 60%; 
+  height: 100%; 
+  background-color: var(--color-primario); 
+  border-radius: 4px; 
+  box-shadow: 0 0 12px rgba(255, 204, 0, 0.8); 
+}
+.pedido-info-texto { 
+  font-size: 0.95rem; 
+  margin: 10px 0 5px; 
+}
+.pedido-info-muted { 
+  font-size: 0.9rem; 
+  color: var(--texto-secundario); 
+  margin-bottom: 10px; 
+}
+
+/* Historial */
+.historial-item { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 15px 0; 
+  border-bottom: 1px solid var(--borde-suave); 
+}
+.historial-item:last-child { 
+  border-bottom: none; 
+}
+.historial-fecha { 
+  font-size: 0.85rem; 
+  color: var(--texto-secundario); 
+  text-align: center; 
+  background: rgba(0,0,0,0.2); 
+  padding: 8px 12px; 
+  border-radius: 8px; 
+}
+.historial-detalles { 
+  flex: 1; 
+  padding: 0 15px; 
+}
+.estado-entregado { 
+  color: var(--exito); 
+  font-size: 0.9rem; 
+  font-weight: 600; 
+  margin-bottom: 5px; 
+}
+.historial-items-texto { 
+  font-size: 0.9rem; 
+  color: var(--texto-secundario); 
+}
+
+/* ———————————————๑•̀ᴗ•̀) ̫ ─꒱ DISEÑO RESPONSIVO (MÓVILES) ——————————————— */
+@media (max-width: 992px) {
+  .contenedor-rewards { 
+    grid-template-columns: 1fr; 
+    max-width: 600px; 
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .panel-encabezado {
+    margin: 20px auto 0;
+    padding: 0 15px;
+  }
+  .panel-encabezado h1 {
+    font-size: 1.5rem;
+  }
+  .tarjeta {
+    padding: 20px 15px; /* Reduce márgenes internos para celulares pequeños */
+  }
+  .contenedor-cupones { 
+    flex-direction: column; /* Apila los cupones verticalmente en pantallas muy angostas */
+    gap: 12px;
+  }
+  .cupon {
+    min-height: 100px;
+  }
+  /* Ajusta los recortes circulares de los cupones para el diseño vertical */
+  .cupon::before, .cupon::after {
+    top: auto;
+    bottom: -10px;
+    transform: none;
+  }
+  .cupon::before { left: 51.5%; transform: translateX(-50%); }
+  .cupon::after { display: none; } /* Oculta uno de los círculos laterales para que luzca bien vertical */
+}

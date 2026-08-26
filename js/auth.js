@@ -1,3 +1,5 @@
+//js/auth.js
+
 import supabase from './supabase.js';
 
 

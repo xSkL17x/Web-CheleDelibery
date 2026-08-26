@@ -31,8 +31,6 @@ async function cargarConfig() {
     return configCache;
 }
 
-function actualizarCache(nuevaConfig) {
-    configCache = nuevaConfig;
-}
+function actualizarCache(nuevaConfig) { configCache = nuevaConfig; }
 
 export { cargarConfig, actualizarCache };

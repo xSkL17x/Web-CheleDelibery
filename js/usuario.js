@@ -20,29 +20,13 @@ document.addEventListener("DOMContentLoaded", async () => {
         if(userName) userName.textContent = nombre;
         if(userAvatar) userAvatar.src = fotoUrl;
 
-        // --- LÓGICA DEL MENÚ DESPLEGABLE ---
         if (userAvatar && dropdownMenu) {
-            // Abrir/Cerrar al tocar el avatar
-            userAvatar.addEventListener('click', (e) => {
-                e.stopPropagation(); // Evita que el clic se propague y cierre el menú de inmediato
-                dropdownMenu.classList.toggle('show-dropdown');
-            });
-
-            // Cerrar el menú si se hace clic fuera de él
-            document.addEventListener('click', (e) => {
-                if (!userProfile.contains(e.target)) {
-                    dropdownMenu.classList.remove('show-dropdown');
-                }
-            });
+            userAvatar.addEventListener('click', (e) => {e.stopPropagation();  dropdownMenu.classList.toggle('show-dropdown'); });
+            document.addEventListener('click', (e) => {if (!userProfile.contains(e.target)) {dropdownMenu.classList.remove('show-dropdown'); }});
         }
         // ------------------------------------
-
-        if(btnLogout) {
-            btnLogout.addEventListener('click', async () => {
-                await cerrarSesion();
-                window.location.reload(); 
-            });
-        }
+        if(btnLogout) {btnLogout.addEventListener('click', async () => {await cerrarSesion();window.location.reload();  });}
+        
     } else {
         if(btnLogin) btnLogin.style.display = 'flex';
         if(userProfile) userProfile.style.display = 'none';

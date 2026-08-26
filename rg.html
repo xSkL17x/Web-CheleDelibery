@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de Usuario | Chele Delivery</title>
+    <title>USUARIO | Chele Delivery</title>
     <!-- Reutilizando el CSS del login -->
     <link rel="stylesheet" href="style/encabezado-flooter.css">     
     <link rel="stylesheet" href="style/login.css">
@@ -21,6 +21,7 @@
         <nav class="menu">
             <ul>
                 <li><a href="index.html">INICIO</a></li>
+                <li><a href="reward.html">MIS RECOMPENSAS</a></li>
                 <li><a href="sv.html">SERVICIOS</a></li>
                 <li><a href="ns.html">NOSOTROS</a></li>
             </ul>
@@ -47,9 +48,7 @@
             <!-- LADO DERECHO (Formulario de Registro) -->
             <div class="login-der">
                 <div class="tarjeta-formulario">
-                    <h2>Crear Cuenta</h2>
-                    <p class="subtitulo-form">Completa tus datos para registrarte</p>
-
+                    <h2>Completa los Datos</h2>
                     <form id="formulario-registro" action="#" method="POST">
                         
                         <!-- Nombre y apellido -->
@@ -66,27 +65,8 @@
                             <label for="celular">Número celular *</label>
                             <div class="caja-input">
                                 <i class="fa-solid fa-phone icono-izq"></i>
-                                <input type="number" id="celular" name="celular" placeholder="Ej. 88888888" required>
-                            </div>
-                        </div>
+                                <input type="number" id="celular" name="celular" placeholder="Ej. 86947233" required min="70000000" max="89999999">
 
-                        <!-- Contraseña -->
-                        <div class="grupo-input">
-                            <label for="contrasena-usuario">Contraseña *</label>
-                            <div class="caja-input">
-                                <i class="fa-solid fa-lock icono-izq"></i>
-                                <input type="password" id="contrasena-usuario" placeholder="••••••••" required>
-                                <i class="fa-solid fa-eye icono-der" id="icon-contrasena-usuario"></i>
-                            </div>
-                        </div>
-                        
-                        <!-- Repetir Contraseña -->
-                        <div class="grupo-input">
-                            <label for="contrasena-repetida">Repetir Contraseña *</label>
-                            <div class="caja-input">
-                                <i class="fa-solid fa-lock icono-izq"></i>
-                                <input type="password" id="contrasena-repetida" placeholder="••••••••" required>
-                                <i class="fa-solid fa-eye icono-der" id="icon-contrasena-repetida"></i>
                             </div>
                         </div>
 
@@ -109,5 +89,6 @@
     <footer><p>© 2026 Chele Delivery by Cyber Bam · Todos los Derechos Reservados.</p></footer>
     
     <script type="module" src="./js/rg.js"></script>
+    <script type="module" src="/js/usuario.js"></script>
 </body>
 </html>

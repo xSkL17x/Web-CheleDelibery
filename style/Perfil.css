@@ -1,0 +1,86 @@
+:root {
+  --bg-principal: #0b0d14; 
+  --bg-tarjeta: #1a1d27; 
+  --color-primario: #ffcc00; 
+  --color-primario-hover: #e6b800;
+  --texto-principal: #ffffff;
+  --texto-secundario: #9ca3af;
+  --borde-suave: rgba(255, 255, 255, 0.08);
+}
+
+body {
+  background: linear-gradient(90deg, rgba(11, 13, 18, 0.1) 0%, var(--bg-principal) 40%, var(--bg-principal) 100%), 
+              url('../assets/fondo-moto.png') no-repeat left center / cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: var(--texto-principal);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+}
+
+/* Encabezado */
+.panel-encabezado {
+  max-width: 600px; /* Ajustado al tamaño de la tarjeta */
+  margin: 40px auto 0; 
+  padding: 0 20px; 
+}
+.panel-encabezado h1 { font-size: 1.8rem; font-weight: 700; margin: 0; }
+.panel-encabezado p { color: var(--texto-secundario); margin-top: 5px; }
+
+/* Avatar (Ajustes de encabezado general) */
+.avatar-img { background: var(--color-primario); border-radius: 50%; padding: 2px; }
+.user-label { color: white; margin-left: 10px; font-weight: bold; }
+
+/* Contenedor central de 1 columna */
+.contenedor-perfil {
+  max-width: 600px;
+  margin: 30px auto 60px;
+  padding: 0 20px;
+}
+
+/* Tarjetas */
+.tarjeta {
+  background-color: rgba(26, 29, 39, 0.95); 
+  backdrop-filter: blur(5px);
+  border-radius: 16px;
+  padding: 30px;
+  border: 1px solid var(--borde-suave);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.titulo-seccion {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid var(--borde-suave);
+  padding-bottom: 10px;
+}
+.titulo-seccion span { float: right; }
+
+/* Formulario */
+.grupo-input { margin-bottom: 20px; }
+.grupo-input label { display: block; font-size: 0.85rem; color: var(--texto-secundario); margin-bottom: 8px; }
+.grupo-input input, .grupo-input textarea {
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid var(--borde-suave);
+  color: var(--texto-principal);
+  padding: 14px 16px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+.grupo-input input:focus, .grupo-input textarea:focus {
+  outline: none; border-color: var(--color-primario); background-color: rgba(255, 204, 0, 0.05);
+}
+
+.contenedor-btn-derecha { text-align: right; margin-top: 25px; }
+.btn-editar {
+  background: transparent; color: var(--texto-principal);
+  border: 1px solid var(--texto-secundario); padding: 10px 24px;
+  border-radius: 20px; cursor: pointer; transition: all 0.3s;
+}
+.btn-editar:hover { border-color: var(--color-primario); color: var(--color-primario); }

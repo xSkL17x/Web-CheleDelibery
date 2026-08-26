@@ -24,6 +24,7 @@
         <nav class="menu">
             <ul>
                 <li><a href="index.html">INICIO</a></li>
+                <li><a href="reward.html">MIS RECOMPENSAS</a></li>
                 <li><a href="sv.html">SERVICIOS</a></li>
                 <li><a href="ns.html">NOSOTROS</a></li>
             </ul>
@@ -48,8 +49,8 @@
             <!-- LADO DERECHO (Formulario) -->
             <div class="login-der">
                 <div class="tarjeta-formulario">
-                    <h2>Bienvenido de vuelta</h2>
-                    <p class="subtitulo-form">Por favor inicia sesión para continuar</p>
+                    <h2>Bienvenido</h2>
+                    <p class="subtitulo-form">Elige como iniciar sesión para continuar</p>
 
                     <!-- Redes Sociales -->
                     
@@ -61,35 +62,27 @@
                         <i class="fa-brands fa-google"></i> Inicia sesión con Google
                     </button>
 
-                    <div class="separador">Inicia sesión</div>                    
+                    <button type="button" id="btn-facebook" class="btn-ingresar" style="background-color: #1877f2; color: white;">
+                        <i class="fa-brands fa-facebook"></i> Inicia sesión con Facebook
+                    </button>                    
+
+                    <div class="separador"></div>                    
 
 
-                    <form id="formulario-acceso">
-                        
-                        <!-- Nombre y apellido -->
+                    <form id="formulario-acceso">                        
                         <div class="grupo-input">
-                            <label for="nombre">Numero o Correo</label>
+                            <label for="numero">Numero telefono</label>
                             <div class="caja-input">
-                                <i class="fa-solid fa-user icono-izq"></i>
-                                <input type="text" id="nombre" name="nombre" placeholder="Ej. 88888888 o ejemplo@correo.com" required>
-                            </div>
-                        </div>
-
-                        <!-- Contraseña -->
-                        <div class="grupo-input">
-                            <label for="contrasena-usuario">Contraseña</label>
-                            <div class="caja-input">
-                                <i class="fa-solid fa-lock icono-izq"></i>
-                                <input type="password" id="contrasena-usuario" placeholder="••••••••" required>
-                                <i class="fa-solid fa-eye icono-der" id="icon-contrasena-usuario"></i>
+                                <i class="fa-solid fa-phone icono-izq"></i>
+                                <input type="number" id="celular" name="celular" placeholder="Ej. 86947233" required min="70000000" max="89999999">
                             </div>
                         </div>
 
                         <!-- Opciones Extra -->
                         <div class="opciones-extra">
-                            <label class="recordar" for="casilla-recordar">
-                                <input type="checkbox" id="casilla-recordar">Recordarme </label>
-                            <a href="#" class="olvide-pass">¿Olvidaste tu contraseña?</a>
+                            <!-- <label class="recordar" for="casilla-recordar">
+                                <input type="checkbox" id="casilla-recordar">Recordarme </label> -->
+                            <!-- <a href="#" class="olvide-pass">¿Olvidaste tu contraseña?</a> -->
                         </div>
 
                         <!-- Botón Ingresar -->
@@ -100,7 +93,7 @@
                     </form>
 
 
-                    <p class="texto-registro"> ¿No tienes cuenta? <a href="rg.html">Regístrate aquí</a> </p>
+                    <!-- <p class="texto-registro"> ¿No tienes cuenta? <a href="rg.html">Regístrate aquí</a> </p> -->
                 </div>
             </div>
 
@@ -109,5 +102,6 @@
 
     <footer><p>© 2026 Chele Delivery by Cyber Bam · Todos los Derechos Reservados.</p></footer>
     <script type="module" src="./js/is.js"></script>
+    <script type="module" src="/js/usuario.js"></script>
 </body>
 </html>
