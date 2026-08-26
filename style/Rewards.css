@@ -227,6 +227,128 @@ body {
   transform: scale(1.05); 
 }
 
+
+/* Contenedor principal de la lista */
+#contenedor-cupones-canjeados {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+/* Tarjeta individual del historial */
+.cupon-historial-card {
+  background-color: #24252e; /* Color oscuro del panel */
+  border: 1px solid #363845; /* Borde sutil */
+  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cupon-historial-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-color: #4a4d5e;
+}
+
+/* Fila Superior: Código y Estado */
+.cupon-historial-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dashed #363845;
+  padding-bottom: 10px;
+}
+
+.cupon-historial-codigo {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+.ticket-icono {
+  color: #ffc107; /* Amarillo de tu diseño */
+  margin-right: 8px;
+  font-size: 1.1rem;
+}
+
+.cupon-historial-estado {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Fila Inferior: Detalles */
+.cupon-historial-body {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #a0a0b0;
+}
+
+.historial-separador {
+  color: #4a4d5e;
+  font-size: 1.2rem;
+}
+
+.historial-detalle .resalte {
+  color: #e0e0e0;
+  font-weight: 600;
+}
+
+/* --- Colores dinámicos por estado --- */
+
+/* Estado Activo (Verde Neón) */
+.cupon-historial-card.activo {
+  border-left: 4px solid #00ff88;
+}
+.cupon-historial-card.activo .cupon-historial-estado {
+  color: #00ff88;
+}
+
+/* Estado Expirado (Rojo/Rosado) */
+.cupon-historial-card.expirado {
+  border-left: 4px solid #ff4466;
+  opacity: 0.7; /* Ligeramente apagado porque ya no sirve */
+}
+.cupon-historial-card.expirado .cupon-historial-estado {
+  color: #ff4466;
+}
+
+/* Estado Canjeado (Gris/Azul claro) */
+.cupon-historial-card.canjeado {
+  border-left: 4px solid #6c757d;
+  opacity: 0.7;
+}
+.cupon-historial-card.canjeado .cupon-historial-estado {
+  color: #8b9bb4;
+}
+
+/* Estado Cancelado (Naranja) */
+.cupon-historial-card.cancelado {
+  border-left: 4px solid #ff9900;
+}
+.cupon-historial-card.cancelado .cupon-historial-estado {
+  color: #ff9900;
+}
+
+/* Mensaje cuando no hay cupones */
+.sin-cupones {
+  text-align: center;
+  color: #6c757d;
+  font-size: 0.95rem;
+  padding: 20px;
+  background-color: #1a1b23;
+  border-radius: 8px;
+  border: 1px dashed #363845;
+}
+
 /* ———————————————๑•̀ᴗ•̀) ̫ ─꒱ SECCIÓN DE PEDIDOS ——————————————— */
 .pedido-actual { 
   background-color: rgba(0,0,0,0.2); 
@@ -297,6 +419,62 @@ body {
 .historial-items-texto { 
   font-size: 0.9rem; 
   color: var(--texto-secundario); 
+}
+
+/* Contenedor principal al pie de la página */
+.panel-reglas-contenedor {
+  background-color: #1a1b23;
+  border: 1px solid #363845;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 25px;
+  width: 100%;
+}
+
+.reglas-titulo {
+  color: #ffc107; /* Amarillo de tu interfaz */
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Grilla responsive de 4 tarjetas pequeñas */
+.reglas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.regla-card {
+  background-color: #24252e;
+  border: 1px solid #363845;
+  border-left: 3px solid #ffc107;
+  border-radius: 8px;
+  padding: 14px;
+}
+
+.regla-card i {
+  color: #ffc107;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.regla-card h4 {
+  color: #ffffff;
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+}
+
+.regla-card p {
+  color: #a0a0b0;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  margin: 0;
 }
 
 /* ———————————————๑•̀ᴗ•̀) ̫ ─꒱ DISEÑO RESPONSIVO (MÓVILES) ——————————————— */

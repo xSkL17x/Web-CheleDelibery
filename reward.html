@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
     <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
     <title>RECOMPENSAS | Chele Delivery</title>
+    <link  rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"  crossorigin="anonymous"  referrerpolicy="no-referrer"  />
     <link rel="stylesheet" href="style/encabezado-flooter.css">
     <link rel="stylesheet" href="style/Rewards.css">
 </head>
@@ -14,8 +15,8 @@
         <div class="logo"><a href="pa.html"><img src="assets/logo.png" loading="lazy" alt="Chele Delivery"></a></div>
         <nav class="menu">
             <ul>
-                <li><a href="#" class="activo">INICIO</a></li>
-                <li><a href="reward.html">MIS RECOMPENSAS</a></li>
+                <li><a href="index.html" >INICIO</a></li>
+                <li><a href="reward.html" class="activo">MIS RECOMPENSAS</a></li>
                 <li><a href="sv.html">SERVICIOS</a></li>
                 <li><a href="ns.html">NOSOTROS</a></li>
             </ul>
@@ -69,6 +70,38 @@
                 <div class="contenedor-cupones-canjeados" id="contenedor-cupones-canjeados"></div>
             </section>
         </div>
+
+        <div class="panel-reglas-contenedor">
+        <h3 class="reglas-titulo">
+            <i class="fa-solid fa-circle-info"></i> ¿Cómo funcionan tus recompensas?
+        </h3>
+
+        <div class="reglas-grid">
+            <div class="regla-card">
+            <i class="fa-solid fa-ticket"></i>
+            <h4>1 Cupón Activo</h4>
+            <p>Solo puedes tener un código activo simultáneamente.</p>
+            </div>
+
+            <div class="regla-card">
+            <i class="fa-solid fa-clock"></i>
+            <h4>12h de Validez</h4>
+            <p>El cupón vence 12 horas después de ser reclamado.</p>
+            </div>
+
+            <div class="regla-card">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <h4>Expiración</h4>
+            <p>Si vence sin usarse, se devuelven tus puntos (-100 pts de penalización).</p>
+            </div>
+
+            <div class="regla-card">
+            <i class="fa-solid fa-truck-fast"></i>
+            <h4>Cancelaciones</h4>
+            <p>Si cancelas el pedido con el delivery en ruta, los puntos no se devuelven.</p>
+            </div>
+        </div>
+        </div>        
     </main>
 
     <footer><p>© 2026 Chele Delivery by Cyber Bam · Todos los Derechos Reservados.</p></footer>
